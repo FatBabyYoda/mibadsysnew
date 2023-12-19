@@ -14,7 +14,7 @@ import oru.inf.InfException;
  * @author lucasandersson
  */
 public class LoginJFrame extends javax.swing.JFrame {
-private InfDB idb;
+protected InfDB idb;
     /**
      * Creates new form NewJFrame
      */
