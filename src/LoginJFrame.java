@@ -1,7 +1,6 @@
 
 
 import javax.swing.JOptionPane;
-import oru.inf.InfDB;
 import oru.inf.InfException;
 
 /*
@@ -14,13 +13,15 @@ import oru.inf.InfException;
  * @author lucasandersson
  */
 public class LoginJFrame extends javax.swing.JFrame {
-protected InfDB idb;
+    
+    
+
     /**
      * Creates new form NewJFrame
      */
-    public LoginJFrame(InfDB idb) {
+    public LoginJFrame() {
         initComponents();
-         this.idb = idb;
+         //this.idb = idb;
              //idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
 
         
@@ -136,7 +137,7 @@ protected InfDB idb;
         try
         {
             
-       String Losen = idb.fetchSingle("select Losenord from "+ agentElAlienComboBox.getSelectedItem().toString() + " where Epost = '" + epostTextField.getText().toLowerCase() +"'");
+       String Losen = Start.idb.fetchSingle("select Losenord from "+ agentElAlienComboBox.getSelectedItem().toString() + " where Epost = '" + epostTextField.getText().toLowerCase() +"'");
 
             if(Losen == null)
             {
@@ -153,13 +154,16 @@ protected InfDB idb;
                 {
                     case "Agent":
                         // öppna ny jfram med nästa del av programmet här
-                        if (idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J"))
+                        if (Start.idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J"))
                         {
                            System.out.println("admin");
                         }
                         else
                         {
                                System.out.println("not admin");
+                               Start.epost =  epostTextField.getText().toLowerCase();
+                               new MenyValAgent().setVisible(true);
+                               
                         }
 
                                 
@@ -167,7 +171,6 @@ protected InfDB idb;
                         break;
                     case "Aliens":
                         // öppna ny jfram med nästa del av programmet här
-                        dispose();
                         break;
                         
                 }

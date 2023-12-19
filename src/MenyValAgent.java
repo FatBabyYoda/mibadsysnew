@@ -1,5 +1,5 @@
 
-import oru.inf.InfDB;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,16 +10,16 @@ import oru.inf.InfDB;
  *
  * @author willi
  */
-public class MenyValAgent extends LoginJFrame {
-    
-    private InfDB idb;
+public class MenyValAgent extends javax.swing.JFrame {
+   
+ 
 
     /**
      * Creates new form MenyValAgent
   
      */
-    public MenyValAgent(InfDB idb) {
-        super(idb);
+    public MenyValAgent() {
+
         initComponents();
     }
 
@@ -91,11 +91,11 @@ public class MenyValAgent extends LoginJFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
+  
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -126,7 +126,6 @@ public class MenyValAgent extends LoginJFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;

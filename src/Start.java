@@ -12,20 +12,21 @@ import oru.inf.InfException;
 
 
 public class Start {
-    private static InfDB idb;
+    public static InfDB idb;
+    public static String epost;
     public static void main(String args[])
   {
     try
         {
               idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
         }
-        catch(Exception undatag)
+        catch(InfException undatag)
                 {
                     JOptionPane.showMessageDialog(null, "nåt gick fel");
                     System.out.println(undatag);
                 }
       
    
-    new LoginJFrame(idb).setVisible(true);       
+    new LoginJFrame().setVisible(true);       
   }
 }
