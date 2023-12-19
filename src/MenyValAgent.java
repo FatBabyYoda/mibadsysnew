@@ -1,4 +1,5 @@
 
+import java.awt.event.KeyEvent;
 import oru.inf.InfException;
 
 /*
@@ -45,10 +46,11 @@ public class MenyValAgent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbValkomst.setText("Välkommen!");
+        lbValkomst.setText("Agent 1");
+        //Här önskar vi att välkomna agenten som har loggat in med namnet som är registrerat i databassen.
         try{
             String getNamn = Start.idb.fetchSingle("SELECT NAMN from agent where Epost ='" + Start.epost + "'");
-            lbValkomst.setText("Välkommen " + getNamn);
+            lbValkomst.setText(getNamn);
         }
         catch(InfException e)
         {
@@ -62,6 +64,11 @@ public class MenyValAgent extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lstAlternativ.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                lstAlternativKeyPressed(evt);
+            }
+        });
         scrpAlternativ.setViewportView(lstAlternativ);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -69,23 +76,23 @@ public class MenyValAgent extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(163, 163, 163)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbValkomst)
-                            .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbValkomst))))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbValkomst)
-                .addGap(12, 12, 12)
+                .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbMenyval)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,6 +101,36 @@ public class MenyValAgent extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //metod för att navigera sig i menyvalen, enter används för att välja alternativ. 
+    private void lstAlternativKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstAlternativKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        //Härnäst önskar vi att se över vilket alternativ som valts av användaren.
+        {
+        String valtAlternativ = lstAlternativ.getSelectedValue();
+       
+        if(valtAlternativ != null){
+            switch(valtAlternativ){
+                case "1. Min utrustning":
+                    
+                    System.out.println("Mer kod kommer");
+                    break;
+                    
+                case "2. Alien":
+                    
+                    System.out.println("Mer kod kommer 2");
+                    break;
+                    
+                case "3. Inställningar":
+                    
+                    System.out.println("Mer kod kommer 3");
+                    break;
+                
+            }
+        }
+ 
+    }
+    }//GEN-LAST:event_lstAlternativKeyPressed
 
     
   
