@@ -1,5 +1,5 @@
 
-
+import oru.inf.InfException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -46,7 +46,14 @@ public class MenyValAgent extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbValkomst.setText("Välkommen!");
-        //String getNamn = "SELECT NAMN from agent where Epost =" + epostTextField;
+        try{
+            String getNamn = Start.idb.fetchSingle("SELECT NAMN from agent where Epost ='" + Start.epost + "'");
+            lbValkomst.setText("Välkommen " + getNamn);
+        }
+        catch(InfException e)
+        {
+            System.out.println (e);
+        }
 
         lbMenyval.setText("Menyval");
 
@@ -67,12 +74,10 @@ public class MenyValAgent extends javax.swing.JFrame {
                         .addGap(138, 138, 138)
                         .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbValkomst))))
+                        .addGap(143, 143, 143)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbValkomst)
+                            .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

@@ -46,13 +46,10 @@
                       <Component id="scrpAlternativ" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Component id="lbMenyval" min="-2" pref="47" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lbValkomst" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbMenyval" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -80,7 +77,7 @@
         <Property name="text" type="java.lang.String" value="V&#xe4;lkommen!"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//String getNamn = &quot;SELECT NAMN from agent where Epost =&quot; + epostTextField;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT NAMN from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbValkomst.setText(&quot;V&#xe4;lkommen &quot; + getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lbMenyval">
