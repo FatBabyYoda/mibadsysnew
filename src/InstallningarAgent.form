@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lbNamn" alignment="0" pref="70" max="32767" attributes="0"/>
+                          <Component id="lbTelefon" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbEpost" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbLösenord" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="182" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="lbNamn" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="lbTelefon" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="lbEpost" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="lbLösenord" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="102" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbTitel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Inst&#xe4;llningar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbNamn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//h&#xe4;mtar agent namnet&#xa;try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT NAMN from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbNamn.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTelefon">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta telefonnummer fr&#xe5;n databasen&#xa;try{&#xa;String getTelefon = Start.idb.fetchSingle(&quot;SELECT Telefon from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbTelefon.setText(getTelefon);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbEpost">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta epost&#xa;try{&#xa;String getEpost = Start.idb.fetchSingle(&quot;SELECT Epost from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbNamn.setText(getEpost);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbL&#xf6;senord">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta l&#xf6;senord&#xa;try{&#xa;String getLosenord = Start.idb.fetchSingle(&quot;SELECT Losenord from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbNamn.setText(getLosenord);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>

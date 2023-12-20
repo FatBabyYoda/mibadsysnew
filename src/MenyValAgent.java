@@ -131,9 +131,9 @@ public class MenyValAgent extends javax.swing.JFrame {
                     System.out.println("Mer kod kommer 2");
                     break;
                     
+                    //Nytt fönster för kontoiställningar
                 case "3. Inställningar":
-                    
-                    System.out.println("Mer kod kommer 3");
+                    new InstallningarAgent().setVisible(true);
                     break;
             //Ingen else sats behövs på grund av att användaren inte kan välja alternativ utanför listan.
             }
