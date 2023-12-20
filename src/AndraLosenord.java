@@ -25,21 +25,85 @@ public class AndraLosenord extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbNyttTitel = new javax.swing.JLabel();
+        lbUpprepaTitel = new javax.swing.JLabel();
+        pfNytt = new javax.swing.JPasswordField();
+        pfUpprepa = new javax.swing.JPasswordField();
+        btnSpara = new javax.swing.JButton();
+        btnAvbryt = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lbNyttTitel.setText("Nytt lösenord");
+
+        lbUpprepaTitel.setText("Upprepa lösenordet");
+
+        pfNytt.setText("jPasswordField1");
+
+        pfUpprepa.setText("jPasswordField2");
+
+        btnSpara.setText("Spara");
+        btnSpara.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSparaMousePressed(evt);
+            }
+        });
+
+        btnAvbryt.setText("Avbryt");
+        btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAvbrytMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbNyttTitel)
+                    .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSpara, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAvbryt)
+                    .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbUpprepaTitel))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbNyttTitel)
+                    .addComponent(lbUpprepaTitel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSpara)
+                    .addComponent(btnAvbryt))
+                .addGap(38, 38, 38))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    //Nya lösenordet som skrivs in sparas i en 
+    private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
+        char[] losenord1 = pfNytt.getPassword();
+        char[] losenord2 = pfNytt.getPassword();
+        
+             
+    }//GEN-LAST:event_btnSparaMousePressed
+
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+    }//GEN-LAST:event_btnAvbrytMousePressed
 
     /**
      * @param args the command line arguments
@@ -77,5 +141,11 @@ public class AndraLosenord extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAvbryt;
+    private javax.swing.JButton btnSpara;
+    private javax.swing.JLabel lbNyttTitel;
+    private javax.swing.JLabel lbUpprepaTitel;
+    private javax.swing.JPasswordField pfNytt;
+    private javax.swing.JPasswordField pfUpprepa;
     // End of variables declaration//GEN-END:variables
 }
