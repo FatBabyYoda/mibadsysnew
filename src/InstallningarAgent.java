@@ -87,7 +87,7 @@ public class InstallningarAgent extends javax.swing.JFrame {
             System.out.println (e);
         }
 
-        btnAndraLosen.setText("Ändra Lösenord");
+        btnAndraLosen.setText("Ändra lösenord");
         btnAndraLosen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAndraLosenMousePressed(evt);
@@ -130,7 +130,7 @@ public class InstallningarAgent extends javax.swing.JFrame {
                                     .addComponent(lbLösenord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addComponent(btnAndraLosen)))))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,9 +162,11 @@ public class InstallningarAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
-        System.out.println("Fett");
+        new InstallningarAndraLosen().setVisible(true);
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
+
+    
     /**
      * @param args the command line arguments
      */
