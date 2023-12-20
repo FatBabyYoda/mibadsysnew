@@ -34,6 +34,10 @@ public class InstallningarAgent extends javax.swing.JFrame {
         lbEpost = new javax.swing.JLabel();
         lbLösenord = new javax.swing.JLabel();
         btnAndraLosen = new javax.swing.JButton();
+        lbNamnTitel = new javax.swing.JLabel();
+        lbTelefonTitel = new javax.swing.JLabel();
+        lbEpostTitel = new javax.swing.JLabel();
+        lbLosenTitel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +94,18 @@ public class InstallningarAgent extends javax.swing.JFrame {
             }
         });
 
+        lbNamnTitel.setLabelFor(lbNamn);
+        lbNamnTitel.setText("Namn:");
+
+        lbTelefonTitel.setLabelFor(lbTelefon);
+        lbTelefonTitel.setText("Telefonnummer:");
+
+        lbEpostTitel.setLabelFor(lbTelefon);
+        lbEpostTitel.setText("E-post:");
+
+        lbLosenTitel.setLabelFor(lbLösenord);
+        lbLosenTitel.setText("Lösenord:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,38 +117,52 @@ public class InstallningarAgent extends javax.swing.JFrame {
                         .addComponent(lbTitel))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lbNamn, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
-                            .addComponent(lbTelefon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbEpost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbLösenord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAndraLosen)))
-                .addContainerGap(180, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNamnTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbTelefonTitel)
+                            .addComponent(lbEpostTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(lbLosenTitel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                                    .addComponent(lbNamn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbTelefon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbEpost, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lbLösenord, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAndraLosen)))))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbTitel)
-                .addGap(31, 31, 31)
+                .addGap(9, 9, 9)
+                .addComponent(lbNamnTitel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbNamn)
-                .addGap(27, 27, 27)
+                .addGap(30, 30, 30)
+                .addComponent(lbTelefonTitel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTelefon)
-                .addGap(26, 26, 26)
+                .addGap(30, 30, 30)
+                .addComponent(lbEpostTitel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbEpost)
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(lbLosenTitel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbLösenord)
                     .addComponent(btnAndraLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
-        
+        System.out.println("Fett");
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
     /**
@@ -143,9 +173,13 @@ public class InstallningarAgent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraLosen;
     private javax.swing.JLabel lbEpost;
+    private javax.swing.JLabel lbEpostTitel;
+    private javax.swing.JLabel lbLosenTitel;
     private javax.swing.JLabel lbLösenord;
     private javax.swing.JLabel lbNamn;
+    private javax.swing.JLabel lbNamnTitel;
     private javax.swing.JLabel lbTelefon;
+    private javax.swing.JLabel lbTelefonTitel;
     private javax.swing.JLabel lbTitel;
     // End of variables declaration//GEN-END:variables
 }

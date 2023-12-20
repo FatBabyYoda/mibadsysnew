@@ -31,17 +31,25 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lbNamn" alignment="0" pref="70" max="32767" attributes="0"/>
-                          <Component id="lbTelefon" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lbEpost" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lbLösenord" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbNamnTitel" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="lbTelefonTitel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbEpostTitel" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lbLosenTitel" alignment="0" pref="70" max="32767" attributes="0"/>
+                                  <Component id="lbNamn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbTelefon" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbEpost" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbLösenord" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="180" max="32767" attributes="0"/>
+              <EmptySpace pref="168" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,18 +58,26 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Component id="lbNamnTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lbNamn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="lbTelefonTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lbTelefon" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="lbEpostTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lbEpost" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <Component id="lbLosenTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbLösenord" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAndraLosen" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -111,6 +127,38 @@
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAndraLosenMousePressed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbNamnTitel">
+      <Properties>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="lbNamn"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Namn:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTelefonTitel">
+      <Properties>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="lbTelefon"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Telefonnummer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbEpostTitel">
+      <Properties>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="lbTelefon"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="E-post:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbLosenTitel">
+      <Properties>
+        <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="lbL&#xf6;senord"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="L&#xf6;senord:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
