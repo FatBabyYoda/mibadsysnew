@@ -33,6 +33,7 @@ public class InstallningarAgent extends javax.swing.JFrame {
         lbTelefon = new javax.swing.JLabel();
         lbEpost = new javax.swing.JLabel();
         lbLösenord = new javax.swing.JLabel();
+        btnAndraLosen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,27 +61,34 @@ public class InstallningarAgent extends javax.swing.JFrame {
             System.out.println (e);
         }
 
-        lbEpost.setText("jLabel2");
+        lbEpost.setText("jLabel3");
         //Hämta epost
         try{
             String getEpost = Start.idb.fetchSingle("SELECT Epost from agent where Epost ='" + Start.epost + "'");
-            lbNamn.setText(getEpost);
+            lbEpost.setText(getEpost);
         }
         catch(InfException e)
         {
             System.out.println (e);
         }
 
-        lbLösenord.setText("jLabel2");
+        lbLösenord.setText("jLabel4");
         //Hämta lösenord
         try{
             String getLosenord = Start.idb.fetchSingle("SELECT Losenord from agent where Epost ='" + Start.epost + "'");
-            lbNamn.setText(getLosenord);
+            lbLösenord.setText(getLosenord);
         }
         catch(InfException e)
         {
             System.out.println (e);
         }
+
+        btnAndraLosen.setText("Ändra Lösenord");
+        btnAndraLosen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAndraLosenMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,8 +105,10 @@ public class InstallningarAgent extends javax.swing.JFrame {
                             .addComponent(lbNamn, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                             .addComponent(lbTelefon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lbEpost, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbLösenord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(182, Short.MAX_VALUE))
+                            .addComponent(lbLösenord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAndraLosen)))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,13 +121,19 @@ public class InstallningarAgent extends javax.swing.JFrame {
                 .addComponent(lbTelefon)
                 .addGap(26, 26, 26)
                 .addComponent(lbEpost)
-                .addGap(28, 28, 28)
-                .addComponent(lbLösenord)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbLösenord)
+                    .addComponent(btnAndraLosen, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
+        
+    }//GEN-LAST:event_btnAndraLosenMousePressed
 
     /**
      * @param args the command line arguments
@@ -125,6 +141,7 @@ public class InstallningarAgent extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAndraLosen;
     private javax.swing.JLabel lbEpost;
     private javax.swing.JLabel lbLösenord;
     private javax.swing.JLabel lbNamn;

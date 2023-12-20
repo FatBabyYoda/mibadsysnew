@@ -37,9 +37,11 @@
                           <Component id="lbEpost" alignment="0" max="32767" attributes="0"/>
                           <Component id="lbLösenord" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnAndraLosen" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="182" max="32767" attributes="0"/>
+              <EmptySpace pref="180" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,9 +56,12 @@
               <Component id="lbTelefon" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="lbEpost" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="lbLösenord" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="102" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbLösenord" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAndraLosen" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="104" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,19 +90,27 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbEpost">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta epost&#xa;try{&#xa;String getEpost = Start.idb.fetchSingle(&quot;SELECT Epost from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbNamn.setText(getEpost);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta epost&#xa;try{&#xa;String getEpost = Start.idb.fetchSingle(&quot;SELECT Epost from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbEpost.setText(getEpost);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lbL&#xf6;senord">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta l&#xf6;senord&#xa;try{&#xa;String getLosenord = Start.idb.fetchSingle(&quot;SELECT Losenord from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbNamn.setText(getLosenord);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;mta l&#xf6;senord&#xa;try{&#xa;String getLosenord = Start.idb.fetchSingle(&quot;SELECT Losenord from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbL&#xf6;senord.setText(getLosenord);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAndraLosen">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra L&#xf6;senord"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAndraLosenMousePressed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
