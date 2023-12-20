@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 import oru.inf.InfException;
 /*
  *
@@ -162,10 +161,11 @@ public class InstallningarAgent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
-        new InstallningarAndraLosen().setVisible(true);
+        
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
-
+   
+ 
     
     /**
      * @param args the command line arguments
