@@ -1,3 +1,7 @@
+
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -93,10 +97,17 @@ public class AndraLosenord extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Nya lösenordet som skrivs in sparas i en 
+    //Nya lösenordet som skrivs in sparas i variabeln losenord1 och 2, detta i datatypen char
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
         char[] losenord1 = pfNytt.getPassword();
         char[] losenord2 = pfNytt.getPassword();
+        //Härnäst jämför vi variablarna som har sparats i Arraylisten
+        if (Arrays.equals(losenord1, losenord2)){
+            System.out.println("Fett!");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
+        }
         
              
     }//GEN-LAST:event_btnSparaMousePressed
