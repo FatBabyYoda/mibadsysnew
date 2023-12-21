@@ -100,9 +100,8 @@ public class AndraLosenord extends javax.swing.JFrame {
     //Nya lösenordet som skrivs in sparas i variabeln losenord1 och 2, detta i datatypen char
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
         char[] losenord1 = pfNytt.getPassword();
-        char[] losenord2 = pfUpprepa.getPassword();
         //Härnäst jämför vi variablarna som har sparats i Arraylisten
-        if (Arrays.equals(losenord1, losenord2)){
+        if (Arrays.equals(losenord1, pfUpprepa.getPassword())){  
             //Kod för att uppdatera lösenordet i databsen inc
             JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
             dispose();
