@@ -39,7 +39,6 @@ public class MenyValAgent extends javax.swing.JFrame {
         lbMenyval = new javax.swing.JLabel();
         scrpAlternativ = new javax.swing.JScrollPane();
         lstAlternativ = new javax.swing.JList<>();
-        lbTillfallig = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -72,14 +71,12 @@ public class MenyValAgent extends javax.swing.JFrame {
         });
         scrpAlternativ.setViewportView(lstAlternativ);
 
-        lbTillfallig.setText("Välj alternativ genom att trycka på enter");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -88,11 +85,7 @@ public class MenyValAgent extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbValkomst))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 97, Short.MAX_VALUE)
-                .addComponent(lbTillfallig)
-                .addGap(90, 90, 90))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,9 +96,7 @@ public class MenyValAgent extends javax.swing.JFrame {
                 .addComponent(lbMenyval)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbTillfallig)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,7 +105,6 @@ public class MenyValAgent extends javax.swing.JFrame {
     //metod för att navigera sig i menyvalen, enter används för att välja alternativ. 
     private void lstAlternativKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstAlternativKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER)
-            
         //Härnäst önskar vi att se över vilket alternativ som valts av användaren.
         {
         String valtAlternativ = lstAlternativ.getSelectedValue();
@@ -131,11 +121,11 @@ public class MenyValAgent extends javax.swing.JFrame {
                     System.out.println("Mer kod kommer 2");
                     break;
                     
-                    //Nytt fönster för kontoiställningar
                 case "3. Inställningar":
-                    new InstallningarAgent().setVisible(true);
+                    
+                    System.out.println("Mer kod kommer 3");
                     break;
-            //Ingen else sats behövs på grund av att användaren inte kan välja alternativ utanför listan.
+                
             }
         }
  
@@ -182,7 +172,6 @@ public class MenyValAgent extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lbMenyval;
-    private javax.swing.JLabel lbTillfallig;
     private javax.swing.JLabel lbValkomst;
     private javax.swing.JList<String> lstAlternativ;
     private javax.swing.JScrollPane scrpAlternativ;
