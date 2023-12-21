@@ -1,6 +1,7 @@
 
 import java.util.Arrays;
 import javax.swing.JOptionPane;
+import oru.inf.InfException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -97,20 +98,27 @@ public class AndraLosenord extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Nya lösenordet som skrivs in sparas i variabeln losenord1 och 2, detta i datatypen char
+    //Nya lösenordet som skrivs görs om till en sträng och lagras i variabeln losenordStr
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
-        char[] losenord1 = pfNytt.getPassword();
-        //Härnäst jämför vi variablarna som har sparats i Arraylisten
-        if (Arrays.equals(losenord1, pfUpprepa.getPassword())){  
-            //Kod för att uppdatera lösenordet i databsen inc
+        String losenordStr = new String(pfNytt.getPassword());
+        
+        //Härnäst jämför vi den nya variabel losenord1 med det som skrivits in i upprepa
+        if (Arrays.equals(pfNytt.getPassword(), pfUpprepa.getPassword())){  
+            //Uppdatera lösenordet utifrån vad som skrevs in i pfNytt, eftersom PasswordField sparas som en char [] omvandlar vi denna från Array till sträng
+            try{
+            Start.idb.update("Update agent set Losenord= '" + losenordStr + "' where Epost ='" + Start.epost + "'");
+            
+            }
+            catch(InfException e){
+                System.out.println(e);
+            }
             JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
             dispose();
+            new InstallningarAgent().setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
-        }
-        
-             
+        }    
     }//GEN-LAST:event_btnSparaMousePressed
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
