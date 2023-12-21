@@ -101,10 +101,14 @@ public class AndraLosenord extends javax.swing.JFrame {
     //Nya lösenordet som skrivs görs om till en sträng och lagras i variabeln losenordStr
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
         String losenordStr = new String(pfNytt.getPassword());
+
+        //Databasen tillåter endast ett lösenord med 6 tecken
+        int maxLangd = 6;
         
-        //Härnäst jämför vi den nya variabel losenord1 med det som skrivits in i upprepa
-        if (Arrays.equals(pfNytt.getPassword(), pfUpprepa.getPassword())){  
-            //Uppdatera lösenordet utifrån vad som skrevs in i pfNytt, eftersom PasswordField sparas som en char [] omvandlar vi denna från Array till sträng
+        //Härnäst jämför vi vad som skrivits in i lösenordfältet, samt säkerställer att det är inom den tillåtna längden
+        if (Arrays.equals(pfNytt.getPassword(), pfUpprepa.getPassword()) && losenordStr.length() <= maxLangd){           
+        
+            //Uppdatera lösenordet utifrån vad som skrevs in i pfNytt
             try{
             Start.idb.update("Update agent set Losenord= '" + losenordStr + "' where Epost ='" + Start.epost + "'");
             
@@ -115,12 +119,18 @@ public class AndraLosenord extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
             dispose();
             new InstallningarAgent().setVisible(true);
-        }
+            }
+        
+        //Felmeddelande om lösnorden inte är korrekta
         else{
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
-        }    
+        } 
+        //Felmeddelande om lösenordet är för långt
+        if(losenordStr.length() > maxLangd){
+            JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
+        } 
     }//GEN-LAST:event_btnSparaMousePressed
-
+    //Stänger fönstret och öppnar åter upp inställningsvyn
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
     }//GEN-LAST:event_btnAvbrytMousePressed
