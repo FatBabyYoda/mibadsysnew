@@ -103,7 +103,9 @@ public class AndraLosenord extends javax.swing.JFrame {
         char[] losenord2 = pfUpprepa.getPassword();
         //Härnäst jämför vi variablarna som har sparats i Arraylisten
         if (Arrays.equals(losenord1, losenord2)){
-            System.out.println("Fett!");
+            //Kod för att uppdatera lösenordet i databsen inc
+            JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
+            dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
