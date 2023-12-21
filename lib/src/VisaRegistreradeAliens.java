@@ -1,12 +1,19 @@
+<<<<<<< Updated upstream
 
 import static Start.idb;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+=======
+>>>>>>> Stashed changes
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 /**
  *
  * @author Admin
@@ -18,9 +25,12 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
      */
     public VisaRegistreradeAliens() {
         initComponents();
+<<<<<<< Updated upstream
 
         fyllListaAliensComboBox();
 
+=======
+>>>>>>> Stashed changes
     }
 
     /**
@@ -32,6 +42,7 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< Updated upstream
         jComboBox1 = new javax.swing.JComboBox<>();
         lblValjRas = new javax.swing.JLabel();
 
@@ -45,10 +56,15 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
 
         lblValjRas.setText("Välj ras:");
 
+=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+>>>>>>> Stashed changes
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< Updated upstream
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(lblValjRas)
@@ -64,11 +80,19 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblValjRas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(282, Short.MAX_VALUE))
+=======
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+>>>>>>> Stashed changes
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
     private void fyllListaAliensComboBox() {
 
         //Metoden för att visa aliens av en viss ras
@@ -82,6 +106,8 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+=======
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -118,7 +144,10 @@ public class VisaRegistreradeAliens extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< Updated upstream
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblValjRas;
+=======
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }
