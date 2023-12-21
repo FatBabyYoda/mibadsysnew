@@ -14,14 +14,14 @@ import oru.inf.InfException;
  */
 public class LoginJFrame extends javax.swing.JFrame {
     
-    
+    private InfDB idb;
 
     /**
      * Creates new form NewJFrame
      */
     public LoginJFrame() {
         initComponents();
-         //this.idb = idb;
+        this.idb = idb;
              //idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
 
         
