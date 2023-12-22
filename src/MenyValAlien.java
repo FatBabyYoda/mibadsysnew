@@ -33,6 +33,7 @@ public class MenyValAlien extends javax.swing.JFrame {
         lbAgent = new javax.swing.JLabel();
         lbInstallningar = new javax.swing.JLabel();
         lbAlien = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,47 +50,50 @@ public class MenyValAlien extends javax.swing.JFrame {
 
         lbMenyvalTitel.setText("Menyval");
 
-        lbAgent.setText("Agent");
+        lbAgent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bilder/agentLogo2.png"))); // NOI18N
         lbAgent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lbAgentMousePressed(evt);
             }
         });
 
-        lbInstallningar.setText("inställningar");
+        lbInstallningar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bilder/settingsLogo2.jpg"))); // NOI18N
         lbInstallningar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lbInstallningarMousePressed(evt);
             }
         });
 
-        lbAlien.setText("Alien");
+        lbAlien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bilder/alienlogo2.png"))); // NOI18N
         lbAlien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lbAlienMousePressed(evt);
             }
         });
 
+        jLabel1.setText("Lök, hittar ny sen");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(163, 163, 163)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbMenyvalTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbTitel))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(lbTitel)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(34, 34, 34)
+                        .addComponent(lbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addComponent(lbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                        .addComponent(lbInstallningar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbInstallningar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +107,9 @@ public class MenyValAlien extends javax.swing.JFrame {
                     .addComponent(lbAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbInstallningar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbAlien, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,6 +164,7 @@ public class MenyValAlien extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbAgent;
     private javax.swing.JLabel lbAlien;
     private javax.swing.JLabel lbInstallningar;
