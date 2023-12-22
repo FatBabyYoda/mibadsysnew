@@ -28,13 +28,13 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lbNyttTitel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSpara" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="pfNytt" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="pfNytt" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnAvbryt" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="lbUpprepaTitel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="pfUpprepa" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="pfUpprepa" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
