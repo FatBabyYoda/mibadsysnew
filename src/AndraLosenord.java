@@ -43,10 +43,6 @@ public class AndraLosenord extends javax.swing.JFrame {
 
         lbUpprepaTitel.setText("Upprepa lösenordet");
 
-        pfNytt.setText("jPasswordField1");
-
-        pfUpprepa.setText("jPasswordField2");
-
         btnSpara.setText("Spara");
         btnSpara.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -69,14 +65,14 @@ public class AndraLosenord extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbNyttTitel)
-                    .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSpara, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnSpara, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAvbryt)
-                    .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbUpprepaTitel))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addComponent(lbUpprepaTitel)
+                    .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,11 +120,11 @@ public class AndraLosenord extends javax.swing.JFrame {
         //Felmeddelande om lösnorden inte är korrekta
         else{
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
-        } 
+        
         //Felmeddelande om lösenordet är för långt
-        if(losenordStr.length() > maxLangd){
-            JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
-        } 
+            if(losenordStr.length() > maxLangd){
+                JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
+        }} 
     }//GEN-LAST:event_btnSparaMousePressed
     //Stänger fönstret och öppnar åter upp inställningsvyn
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
