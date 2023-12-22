@@ -159,7 +159,7 @@ public class InstallningarAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
-        new AndraLosenord().setVisible(true);
+        new AndraLosenordAlien().setVisible(true);
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
     /**
