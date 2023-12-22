@@ -134,7 +134,7 @@ public class MenyValAgent extends javax.swing.JFrame {
                     //Nytt fönster för kontoiställningar
                 case "3. Inställningar":
                     dispose();
-                    new InstallningarAgent().setVisible(true);
+                    new Installningar().setVisible(true);
                     break;
             //Ingen else sats behövs på grund av att användaren inte kan välja alternativ utanför listan.
             }

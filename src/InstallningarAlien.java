@@ -1,7 +1,9 @@
+
 import oru.inf.InfException;
+
+
 /*
- *
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
@@ -9,12 +11,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
  *
  * @author willi
  */
-public class InstallningarAgent extends javax.swing.JFrame {
+public class InstallningarAlien extends javax.swing.JFrame {
 
     /**
-     * Creates new form InstallningarAgent
+     * Creates new form InstallningarAlien
      */
-    public InstallningarAgent() {
+    public InstallningarAlien() {
         initComponents();
     }
 
@@ -28,24 +30,26 @@ public class InstallningarAgent extends javax.swing.JFrame {
     private void initComponents() {
 
         lbTitel = new javax.swing.JLabel();
+        lbNamnTitel = new javax.swing.JLabel();
         lbNamn = new javax.swing.JLabel();
+        lbTelefonTitel = new javax.swing.JLabel();
         lbTelefon = new javax.swing.JLabel();
+        lbEpostTitel = new javax.swing.JLabel();
         lbEpost = new javax.swing.JLabel();
+        lbLosenTitel = new javax.swing.JLabel();
         lbLösenord = new javax.swing.JLabel();
         btnAndraLosen = new javax.swing.JButton();
-        lbNamnTitel = new javax.swing.JLabel();
-        lbTelefonTitel = new javax.swing.JLabel();
-        lbEpostTitel = new javax.swing.JLabel();
-        lbLosenTitel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbTitel.setText("Inställningar");
 
+        lbNamnTitel.setText("Namn:");
+
         lbNamn.setText("jLabel1");
         //hämtar agent namnet
         try{
-            String getNamn = Start.idb.fetchSingle("SELECT NAMN from agent where Epost ='" + Start.epost + "'");
+            String getNamn = Start.idb.fetchSingle("SELECT NAMN from alien where Epost ='" + Start.epost + "'");
             lbNamn.setText(getNamn);
         }
         catch(InfException e)
@@ -53,10 +57,12 @@ public class InstallningarAgent extends javax.swing.JFrame {
             System.out.println (e);
         }
 
+        lbTelefonTitel.setText("Telefonnummer:");
+
         lbTelefon.setText("jLabel2");
         //Hämta telefonnummer från databasen
         try{
-            String getTelefon = Start.idb.fetchSingle("SELECT Telefon from agent where Epost ='" + Start.epost + "'");
+            String getTelefon = Start.idb.fetchSingle("SELECT Telefon from alien where Epost ='" + Start.epost + "'");
             lbTelefon.setText(getTelefon);
         }
         catch(InfException e)
@@ -64,10 +70,12 @@ public class InstallningarAgent extends javax.swing.JFrame {
             System.out.println (e);
         }
 
+        lbEpostTitel.setText("E-post:");
+
         lbEpost.setText("jLabel3");
         //Hämta epost
         try{
-            String getEpost = Start.idb.fetchSingle("SELECT Epost from agent where Epost ='" + Start.epost + "'");
+            String getEpost = Start.idb.fetchSingle("SELECT Epost from alien where Epost ='" + Start.epost + "'");
             lbEpost.setText(getEpost);
         }
         catch(InfException e)
@@ -75,10 +83,12 @@ public class InstallningarAgent extends javax.swing.JFrame {
             System.out.println (e);
         }
 
+        lbLosenTitel.setText("Lösenord:");
+
         lbLösenord.setText("jLabel4");
         //Hämta lösenord
         try{
-            String getLosenord = Start.idb.fetchSingle("SELECT Losenord from agent where Epost ='" + Start.epost + "'");
+            String getLosenord = Start.idb.fetchSingle("SELECT Losenord from alien where Epost ='" + Start.epost + "'");
             lbLösenord.setText(getLosenord);
         }
         catch(InfException e)
@@ -92,18 +102,6 @@ public class InstallningarAgent extends javax.swing.JFrame {
                 btnAndraLosenMousePressed(evt);
             }
         });
-
-        lbNamnTitel.setLabelFor(lbNamn);
-        lbNamnTitel.setText("Namn:");
-
-        lbTelefonTitel.setLabelFor(lbTelefon);
-        lbTelefonTitel.setText("Telefonnummer:");
-
-        lbEpostTitel.setLabelFor(lbTelefon);
-        lbEpostTitel.setText("E-post:");
-
-        lbLosenTitel.setLabelFor(lbLösenord);
-        lbLosenTitel.setText("Lösenord:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,7 +146,7 @@ public class InstallningarAgent extends javax.swing.JFrame {
                 .addComponent(lbEpostTitel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbEpost)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(lbLosenTitel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -164,13 +162,40 @@ public class InstallningarAgent extends javax.swing.JFrame {
         new AndraLosenord().setVisible(true);
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
-   
- 
-    
     /**
      * @param args the command line arguments
      */
-    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(InstallningarAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(InstallningarAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(InstallningarAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(InstallningarAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new InstallningarAlien().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAndraLosen;

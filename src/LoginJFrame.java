@@ -169,8 +169,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                                 
                         //dispose();
                         break;
-                    case "Aliens":
-                        // öppna ny jfram med nästa del av programmet här
+                    case "Alien":
+                        Start.epost =  epostTextField.getText().toLowerCase();
+                        new MenyValAlien().setVisible(true);
                         break;
                         
                 }

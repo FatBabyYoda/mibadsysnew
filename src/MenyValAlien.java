@@ -57,6 +57,11 @@ public class MenyValAlien extends javax.swing.JFrame {
         });
 
         lbInstallningar.setText("inställningar");
+        lbInstallningar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lbInstallningarMousePressed(evt);
+            }
+        });
 
         lbAlien.setText("Alien");
         lbAlien.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,6 +116,11 @@ public class MenyValAlien extends javax.swing.JFrame {
     private void lbAgentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAgentMousePressed
         // Kod för när agent logo trycks ned
     }//GEN-LAST:event_lbAgentMousePressed
+
+    private void lbInstallningarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInstallningarMousePressed
+        // Kod för när inställningar logo trycks ned
+        new InstallningarAlien().setVisible(true);
+    }//GEN-LAST:event_lbInstallningarMousePressed
 
     /**
      * @param args the command line arguments

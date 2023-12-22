@@ -114,7 +114,8 @@ public class AndraLosenord extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
             dispose();
-            new InstallningarAgent().setVisible(true);
+            // Eftersom att aliens och agent använder sig av samma lösenords ändrare fungerar inte denna, får se över senare
+            //new Installningar().setVisible(true);
             }
         
         //Felmeddelande om lösnorden inte är korrekta
