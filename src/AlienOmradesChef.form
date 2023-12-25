@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                      <Component id="lbSidTitel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbAgentNamn" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="lbInfoTitel" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="lbMailTitel" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="lbTelTitel" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbAgentTel" min="-2" pref="97" max="-2" attributes="0"/>
+                                  <Component id="lbAgentMail" min="-2" pref="75" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="166" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="lbSidTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Component id="lbAgentNamn" min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="lbInfoTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbTelTitel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbAgentTel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbMailTitel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbAgentMail" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="142" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbAgentNamn">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Bilder/agentLogo2.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Agent 1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT agent.namn from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentNamn.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbSidTitel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Din omr&#xe5;deschef"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbInfoTitel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Information:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTelTitel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Telefonnummer:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbAgentTel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="00000000000"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getTelefon = Start.idb.fetchSingle(&quot;SELECT agent.telefon from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentTel.setText(getTelefon);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbMailTitel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mailadress:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbAgentMail">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx@epost.se"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getMail = Start.idb.fetchSingle(&quot;SELECT agent.epost from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentMail.setText(getMail);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+      </AuxValues>
+    </Component>
+  </SubComponents>
+</Form>

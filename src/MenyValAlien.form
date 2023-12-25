@@ -23,28 +23,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <Component id="lbAlien" min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbMenyvalTitel" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="lbTitel" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="lbAlien" min="-2" pref="85" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="lbAgent" min="-2" pref="85" max="-2" attributes="0"/>
+                  <Component id="lbTitel" max="-2" attributes="0"/>
+                  <Component id="lbMenyvalTitel" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lbAgent" min="-2" pref="97" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbInstallningar" min="-2" pref="85" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="99" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lbInstallningar" min="-2" pref="85" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,17 +45,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbTitel" min="-2" pref="22" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lbMenyvalTitel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbAgent" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbInstallningar" alignment="1" min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="lbAlien" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lbAgent" max="32767" attributes="0"/>
+                  <Component id="lbAlien" max="32767" attributes="0"/>
+                  <Component id="lbInstallningar" alignment="0" pref="70" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="103" max="32767" attributes="0"/>
+              <EmptySpace pref="137" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -95,7 +85,7 @@
     <Component class="javax.swing.JLabel" name="lbInstallningar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Bilder/settingsLogo2.jpg"/>
+          <Image iconType="3" name="/Bilder/SettingsLogo4.png"/>
         </Property>
       </Properties>
       <Events>
@@ -111,11 +101,6 @@
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbAlienMousePressed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="L&#xf6;k, hittar ny sen"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
