@@ -84,7 +84,7 @@
         <Property name="text" type="java.lang.String" value="Agent 1"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT agent.namn from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentNamn.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//F&#xf6;ljande kod upprepas l&#xe4;ngre ned fast att vi h&#xe4;mtar olika information, detta g&#xf6;rs genom en join &#xa;&#xa;try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT agent.namn from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentNamn.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="lbSidTitel">

@@ -122,8 +122,7 @@ public class MenyValAgent extends javax.swing.JFrame {
         if(valtAlternativ != null){
             switch(valtAlternativ){
                 case "1. Min utrustning":
-                    
-                    System.out.println("Mer kod kommer");
+                    new AgentMinUtrustning().setVisible(true);
                     break;
                     
                 case "2. Alien":

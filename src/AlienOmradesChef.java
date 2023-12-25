@@ -41,6 +41,8 @@ public class AlienOmradesChef extends javax.swing.JFrame {
 
         lbAgentNamn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bilder/agentLogo2.png"))); // NOI18N
         lbAgentNamn.setText("Agent 1");
+        //Följande kod upprepas längre ned fast att vi hämtar olika information, detta görs genom en join
+
         try{
             String getNamn = Start.idb.fetchSingle("SELECT agent.namn from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost ='" + Start.epost + "'");
             lbAgentNamn.setText(getNamn);
