@@ -27,6 +27,6 @@ public class Start {
                 }
       
    
-    new LoginJFrame().setVisible(true);       
+    new NyregistreraAlien().setVisible(true);       
   }
 }
