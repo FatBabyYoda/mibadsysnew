@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -40,8 +40,10 @@ public class HittaAlienPlats extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Aliens Platser");
 
+        AlienLista.setEditable(false);
         AlienLista.setColumns(20);
         AlienLista.setRows(5);
         jScrollPane2.setViewportView(AlienLista);
@@ -71,11 +73,9 @@ public class HittaAlienPlats extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -94,7 +94,7 @@ public class HittaAlienPlats extends javax.swing.JFrame {
                             .addComponent(jButton2)
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -124,26 +124,18 @@ public class HittaAlienPlats extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AlienLista.setText("");
-        try{
-                String valdPlats = jComboBox1.getSelectedItem().toString();
-                String AliensPlats = Start.idb.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING ='" + valdPlats +"'");
-                ArrayList<String> NamnLista = Start.idb.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS ='" + AliensPlats + "'");
-                
-                        for(int i = 0; i < NamnLista.size(); i++)
-                        {
-                        AlienLista.append(NamnLista.get(i) + "\n");    
-                        }
-                        
-               // String AliensPlats = Sta  rt.idb.fetchSingle("SELECT PLATS FROM ALIEN");
-               // String omradeID = Start.idb.fetchSingle("SELECT OMRADE_ID FROM OMRADE");
-               // String omradeNamn = Start.idb.fetchSingle("SELECT BENAMNING FROM OMRADE");
-            
-           }
-        catch(InfException e)
-             { 
+        try {
+            String valdPlats = jComboBox1.getSelectedItem().toString();
+            String AliensPlats = Start.idb.fetchSingle("SELECT OMRADES_ID FROM OMRADE WHERE BENAMNING ='" + valdPlats + "'");
+            ArrayList<String> NamnLista = Start.idb.fetchColumn("SELECT NAMN FROM ALIEN WHERE PLATS ='" + AliensPlats + "'");
+
+            for (int i = 0; i < NamnLista.size(); i++) {
+                AlienLista.append(NamnLista.get(i) + "\n");
+            }
+        } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
             System.out.println(e);
-             }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
