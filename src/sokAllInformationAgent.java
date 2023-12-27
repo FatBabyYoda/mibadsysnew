@@ -142,7 +142,7 @@ public class sokAllInformationAgent extends javax.swing.JFrame {
             ArrayList<String> adminLista = Start.idb.fetchColumn("SELECT ADMINISTRATOR FROM AGENT WHERE NAMN ='" + agentNamn + "'");
 
             for (int i = 0; i < namnLista.size(); i++) {
-                infoLista.append(" Namn: " + namnLista.get(i) + "\n" + " Id: " + idLista.get(i) + "\n" + " Epost: " + epostLista.get(i) + "\n" + " Registreringsdatum: " + anstallningDatumLista.get(i) + "\n" + " Telefon: " + telefonLista.get(i) + "\n" + " Plats: " + platsLista.get(i) + "\n" + " Administratör: " + adminLista.get(i) + "\n");
+                infoLista.append(" Namn: " + namnLista.get(i) + "\n" + " Id: " + idLista.get(i) + "\n" + " Epost: " + epostLista.get(i) + "\n" + " Anställningsdatum: " + anstallningDatumLista.get(i) + "\n" + " Telefon: " + telefonLista.get(i) + "\n" + " Plats: " + platsLista.get(i) + "\n" + " Administratör: " + adminLista.get(i) + "\n");
             }
         } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");

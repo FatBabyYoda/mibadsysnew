@@ -27,12 +27,11 @@ public class Start {
                 }
       
    
-//<<<<<<< Updated upstream
-  //  new NyregistreraAlien().setVisible(true);       
-//=======
-  //  new LoginJFrame().setVisible(true);
-  new sokAllInformationAgent().setVisible(true);
-//>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+   new NyregistreraAlien().setVisible(true);       
+=======
+    new LoginJFrame().setVisible(true);
+>>>>>>> Stashed changes
     
   }
 }
