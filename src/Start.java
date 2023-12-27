@@ -32,5 +32,6 @@ public class Start {
 =======
     new LoginJFrame().setVisible(true);
 >>>>>>> Stashed changes
+    
   }
 }
