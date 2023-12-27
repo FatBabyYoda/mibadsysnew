@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author Ägaren
+ * @author David
  */
 public class RegistreringsDatumAlien extends javax.swing.JFrame {
 

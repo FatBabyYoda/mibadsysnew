@@ -101,18 +101,16 @@ public class HittaAlienPlats extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void fyllHittaAlienCombobox() {
-        try
-        {
+        try {
             ArrayList<HashMap<String, String>> AlienLista = Start.idb.fetchRows("SELECT Benamning FROM OMRADE");
-            for(int i = 0; i < AlienLista.size();i++){
-            jComboBox1.addItem(AlienLista.get(i).get("Benamning"));    
-        }
+            for (int i = 0; i < AlienLista.size(); i++) {
+                jComboBox1.addItem(AlienLista.get(i).get("Benamning"));
             }
-        catch(InfException e) {
+        } catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
-                }  
-            }
-        
+        }
+    }
+
         
     
     

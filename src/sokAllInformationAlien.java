@@ -65,7 +65,7 @@ public class sokAllInformationAlien extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Alien");
+        jLabel2.setText("Alien:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
