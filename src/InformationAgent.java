@@ -13,12 +13,12 @@ import oru.inf.InfException;
  *
  * @author David
  */
-public class sokAllInformationAgent extends javax.swing.JFrame {
+public class InformationAgent extends javax.swing.JFrame {
 
     /**
      * Creates new form sokAllInformationAgent
      */
-    public sokAllInformationAgent() {
+    public InformationAgent() {
         initComponents();
         fyllIagentComboBox();
     }
@@ -179,20 +179,21 @@ public class sokAllInformationAgent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(sokAllInformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(sokAllInformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(sokAllInformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(sokAllInformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InformationAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new sokAllInformationAgent().setVisible(true);
+                new InformationAgent().setVisible(true);
             }
         });
     }
