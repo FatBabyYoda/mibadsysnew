@@ -91,33 +91,66 @@ public class AgentMinUtrustning extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSokMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSokMousePressed
-     //För denna metod önskar vi att hämta objektet från vår Combobox, därefter konvertera det till en string och sedan utföra kod
+       //Rensa textfältet innan sökning
+        taUtrustning.setText("");
+//För denna metod önskar vi att hämta objektet från vår Combobox, därefter konvertera det till en string och sedan utföra kod
         switch(cbAlternativ.getSelectedItem().toString()){
-          //fetchRows lagras i en Arraylist som vi benämnt listaUtrustning, härnäst önskar vi att gå igenom hashmapen mot arraylisten och skriva ut information från databasen
+          //Alternativ för att visa all utrustning
             case "All utrustning":
-              try{
-              ArrayList<HashMap<String, String>> listaUtrustning = Start.idb.fetchRows("Select benamning from utrustning");
-              for(HashMap <String, String> utrustning : listaUtrustning){
-                taUtrustning.append(utrustning.toString() + "\n");
-              }
+              visaAllUtrustning();
+              break;
               
+            //Alternativ för att visa agentens egna utrustning
+          case "Min utrustning":
+              visaMinUtrustning();
+              break;
+      }
+    }//GEN-LAST:event_btnSokMousePressed
+    //Metod för att visa alla utrustning som finns i databasen
+    private void visaAllUtrustning()
+    {
+       try{
+              //Här vill vi hämta alla rader från databasen, detta lagras i en ArrayList som lagrar en hashmap
+              ArrayList<HashMap<String, String>> listaUtrustning = Start.idb.fetchRows("Select * from utrustning");
+              //Här används en for each loop för att gå igenom hashmapen i listan som skapats
+              for(HashMap <String, String> utrustning : listaUtrustning){
+                 
+               laggTillText(utrustning);
+              }
               }
               
               catch(InfException e)
               {
                   JOptionPane.showMessageDialog(null, "Något gick fel!");
+              } 
+    }
+    
+    //Metod för att visa agentens utrustning
+    private void visaMinUtrustning()
+    {
+        try{
+                  ArrayList<HashMap<String, String>> listaMinUtrustning = Start.idb.fetchRows("SELECT * FROM utrustning " +
+                          "JOIN innehar_utrustning ON utrustning.Utrustnings_ID = innehar_utrustning.Utrustnings_ID " +
+                          "JOIN agent ON innehar_utrustning.Agent_ID = agent.Agent_ID " +
+                          "WHERE agent.Epost = '" + Start.epost + "'");
+                  for(HashMap <String, String> minUtrustning : listaMinUtrustning){
+                  
+                  laggTillText(minUtrustning);
+                  }
+                      
               }
-              
-              
-              break;
-              
-            
-          case "Min utrustning":
-              //Skön kod
-              break;
-      }
-    }//GEN-LAST:event_btnSokMousePressed
-  
+              catch(InfException e)
+              {
+                  JOptionPane.showMessageDialog(null, "Något gick fel!");
+              }
+    }
+    //Metod för att lägga till texten i Text Arean utan att behöva upprepa koden
+    private void laggTillText(HashMap<String, String> utrustning)
+    {
+        String id = utrustning.get("Utrustnings_ID");
+        String benamning = utrustning.get("Benamning");
+        taUtrustning.append(id + ": " + benamning + "\n");
+    }
     /**
      * @param args the command line arguments
      */
