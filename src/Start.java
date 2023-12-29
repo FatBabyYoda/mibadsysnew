@@ -31,7 +31,7 @@ public class Start {
   // new NyregistreraAlien().setVisible(true);       
 //=======
   //  new LoginJFrame().setVisible(true);
-  new LaggTillAgent().setVisible(true);
+  new LoginJFrame().setVisible(true);
   
  
 //>>>>>>> Stashed changes
