@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import javax.swing.JOptionPane;
 import oru.inf.InfException;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -27,44 +29,95 @@ public class AgentMinUtrustning extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbUtrustning = new javax.swing.JTable();
+        btnSok = new javax.swing.JButton();
+        cbAlternativ = new javax.swing.JComboBox<>();
+        lbTitel = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        taUtrustning = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tbUtrustning.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
-            },
-            new String [] {
-                "Benämning"
+        btnSok.setText("Sök");
+        btnSok.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSokMousePressed(evt);
             }
-        ));
-        //Hämta objekt från databasen och lägg till det i vår table genom en arraylist
-        jScrollPane1.setViewportView(tbUtrustning);
+        });
+
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All utrustning", "Min utrustning" }));
+
+        lbTitel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel.setText("Utrustning");
+
+        taUtrustning.setEditable(false);
+        taUtrustning.setColumns(20);
+        taUtrustning.setRows(5);
+        jScrollPane2.setViewportView(taUtrustning);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSok)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTitel)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(cbAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(lbTitel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cbAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(205, 205, 205))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(btnSok)
+                .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSokMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSokMousePressed
+     //För denna metod önskar vi att hämta objektet från vår Combobox, därefter konvertera det till en string och sedan utföra kod
+        switch(cbAlternativ.getSelectedItem().toString()){
+          //fetchRows lagras i en Arraylist som vi benämnt listaUtrustning, härnäst önskar vi att gå igenom hashmapen mot arraylisten och skriva ut information från databasen
+            case "All utrustning":
+              try{
+              ArrayList<HashMap<String, String>> listaUtrustning = Start.idb.fetchRows("Select benamning from utrustning");
+              for(HashMap <String, String> utrustning : listaUtrustning){
+                taUtrustning.append(utrustning.toString() + "\n");
+              }
+              
+              }
+              
+              catch(InfException e)
+              {
+                  JOptionPane.showMessageDialog(null, "Något gick fel!");
+              }
+              
+              
+              break;
+              
+            
+          case "Min utrustning":
+              //Skön kod
+              break;
+      }
+    }//GEN-LAST:event_btnSokMousePressed
+  
     /**
      * @param args the command line arguments
      */
@@ -101,7 +154,10 @@ public class AgentMinUtrustning extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbUtrustning;
+    private javax.swing.JButton btnSok;
+    private javax.swing.JComboBox<String> cbAlternativ;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbTitel;
+    private javax.swing.JTextArea taUtrustning;
     // End of variables declaration//GEN-END:variables
 }
