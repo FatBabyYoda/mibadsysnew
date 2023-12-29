@@ -30,8 +30,13 @@ public class Start {
 //<<<<<<< Updated upstream
   // new NyregistreraAlien().setVisible(true);       
 //=======
+
     new LoginJFrame().setVisible(true);
   
+//=======
+  //  new LoginJFrame().setVisible(true);
+  //new LoginJFrame().setVisible(true);
+//>>>>>>> c8b79251592eb481380b29977e8cd4a471596599
   
  
 //>>>>>>> Stashed changes

@@ -163,7 +163,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfEpost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,13 +204,44 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            String nyttId = Start.idb.getAutoIncrement("alien","Alien_id");
+        
         Date dagensDatum = new Date();
-
+         
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
         String datum = format.format(dagensDatum);
         System.out.println(datum);
+        
+        if (tfEpost.getText().isEmpty() && tfNamn.getText().isEmpty() && tfTelefon.getText().isEmpty() && pfLosen.getPassword().equals(pfLosenUpp.getPassword()))
+        {
+            JOptionPane.showMessageDialog(null, "fyll i alla rutor");
+        }
+        else
+        {
+            String plats = Start.idb.fetchSingle("select Omrades_ID from omrade where Benamning = "+"'"+cbPlats.getSelectedItem().toString()+"'");
+            String ansAgent = Start.idb.fetchSingle("select Agent_ID from Agent where Namn = "+"'"+cbAnsvAgnt.getSelectedItem().toString()+"'");
+            String Epost = tfEpost.getText();
+            String Losen = new String(pfLosen.getPassword());
+            String namn = tfNamn.getText();
+            String Telefon = tfTelefon.getText();
+            Start.idb.insert("insert into alien values ("+nyttId + ",'"+
+                    datum +
+                    "','"+Epost+"',"+
+                    "'"+Losen+"',"+
+                    "'"+namn+"',"+
+                    "'"+Telefon+"',"+
+                    plats+","+
+                    ansAgent+
+                    ")");
+        }
+        }
+        catch (InfException e)
+                    {
+                        System.out.println(e);
+                    }
         
     }//GEN-LAST:event_btnRegActionPerformed
 
