@@ -30,11 +30,11 @@ public class MenyValAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         lbValkomst = new javax.swing.JLabel();
-        lbMenyval = new javax.swing.JLabel();
         scrpAlternativ = new javax.swing.JScrollPane();
         lstAlternativ = new javax.swing.JList<>();
         lbTillfallig = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        lbTitel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,8 +48,6 @@ public class MenyValAdmin extends javax.swing.JFrame {
         {
             System.out.println (e);
         }
-
-        lbMenyval.setText("Menyval");
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1. Utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
@@ -73,6 +71,9 @@ public class MenyValAdmin extends javax.swing.JFrame {
             }
         });
 
+        lbTitel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel.setText("Menyval");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,10 +87,10 @@ public class MenyValAdmin extends javax.swing.JFrame {
                 .addComponent(lbTillfallig)
                 .addGap(90, 90, 90))
             .addGroup(layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbValkomst))
+                .addContainerGap()
+                .addComponent(lbTitel)
+                .addGap(101, 101, 101)
+                .addComponent(lbValkomst)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1))
         );
@@ -99,11 +100,11 @@ public class MenyValAdmin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbTitel)))
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbMenyval)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(28, 28, 28)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTillfallig)
@@ -188,8 +189,8 @@ public class MenyValAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel lbMenyval;
     private javax.swing.JLabel lbTillfallig;
+    private javax.swing.JLabel lbTitel;
     private javax.swing.JLabel lbValkomst;
     private javax.swing.JList<String> lstAlternativ;
     private javax.swing.JScrollPane scrpAlternativ;
