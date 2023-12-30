@@ -39,6 +39,7 @@ public class AlienOmradesChef extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lbAgentNamn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbAgentNamn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bilder/agentLogo2.png"))); // NOI18N
         lbAgentNamn.setText("Agent 1");
         //Följande kod upprepas längre ned fast att vi hämtar olika information, detta görs genom en join
@@ -52,8 +53,10 @@ public class AlienOmradesChef extends javax.swing.JFrame {
             System.out.println (e);
         }
 
+        lbInfoTitel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbInfoTitel.setText("Information:");
 
+        lbTelTitel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbTelTitel.setText("Telefonnummer:");
 
         lbAgentTel.setText("00000000000");
@@ -66,6 +69,7 @@ public class AlienOmradesChef extends javax.swing.JFrame {
             System.out.println (e);
         }
 
+        lbMailTitel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lbMailTitel.setText("Mailadress:");
 
         lbAgentMail.setText("xxx@epost.se");
@@ -89,16 +93,16 @@ public class AlienOmradesChef extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbAgentNamn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbInfoTitel, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lbInfoTitel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lbMailTitel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lbTelTitel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbAgentTel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbAgentMail, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbTitel)
@@ -120,7 +124,7 @@ public class AlienOmradesChef extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbMailTitel)
                     .addComponent(lbAgentMail))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         pack();
