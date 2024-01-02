@@ -219,15 +219,25 @@ public class InformationAgent extends javax.swing.JFrame {
           //Vår infoLista är inte tom, sql frågor ställs
           try
           {
-              //SQL frågor där raden inte ska raderas utan endast uppdateras
-              Start.idb.update("");
+              //Vi sparar agentID som en variabel, denna hämtar vi från vår combobox för att sedan utföra SQL frågor
+              String agentNamn = Alternativen.getSelectedItem().toString();
               
+               //SQL frågor där raden inte ska raderas utan endast uppdateras, vi gör detta genom underfrågor då namnet är den information vi utgår ifrån
+              Start.idb.update("Update kontorschef set agent_id = null where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.update("Update Alien set ansvarig_agent = null where ansvarig_agent = (select agent_ID from agent where namn = '" + agentNamn + "')");
               //SQL frågor där all information ska tas bort
+              Start.idb.delete("Delete from innehar_utrustning where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.delete("Delete from omradeschef where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.delete("Delete from agent where namn = '" + agentNamn + "'");
+              
+              JOptionPane.showMessageDialog(null, "Agent Borttagen!");
+              
           }
           
           catch(InfException e)
           {
               JOptionPane.showMessageDialog(null, "Något gick fel!");
+              System.out.println(e);
           }
         }
             

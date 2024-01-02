@@ -98,16 +98,8 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 new LaggTillAgent().setVisible(true);
                 break;
             
-            case "Sök":
-                new InformationAgent().setVisible(true);
-                break;
-            
             case "Uppdatera":
-                //Mer kod kommer
-                break;
-                
-            case "Rader":
-                //Mer kod kommer
+                new InformationAgent().setVisible(true);
                 break;
         }
     }//GEN-LAST:event_btnOKActionPerformed
