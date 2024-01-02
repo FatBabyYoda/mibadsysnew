@@ -156,7 +156,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                         // öppna ny jfram med nästa del av programmet här
                         if (Start.idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J"))
                         {
-                           System.out.println("admin");
+                           Start.epost =  epostTextField.getText().toLowerCase();
+                        new MenyValAdmin().setVisible(true);
+                        break;
                         }
                         else
                         {

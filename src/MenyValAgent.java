@@ -36,16 +36,18 @@ public class MenyValAgent extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         lbValkomst = new javax.swing.JLabel();
-        lbMenyval = new javax.swing.JLabel();
         scrpAlternativ = new javax.swing.JScrollPane();
         lstAlternativ = new javax.swing.JList<>();
         lbTillfallig = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        lbTitel = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 300));
 
         lbValkomst.setText("Agent 1");
         //Här önskar vi att välkomna agenten som har loggat in med namnet som är registrerat i databassen.
@@ -57,8 +59,6 @@ public class MenyValAgent extends javax.swing.JFrame {
         {
             System.out.println (e);
         }
-
-        lbMenyval.setText("Menyval");
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1. Min utrustning", "2. Alien", "3. Inställningar" };
@@ -74,38 +74,55 @@ public class MenyValAgent extends javax.swing.JFrame {
 
         lbTillfallig.setText("Välj alternativ genom att trycka på enter");
 
+        jButton1.setForeground(new java.awt.Color(255, 51, 0));
+        jButton1.setText("X");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        lbTitel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel.setText("Menyval");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbMenyval, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbValkomst))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(138, 138, 138)
+                .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(162, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 97, Short.MAX_VALUE)
                 .addComponent(lbTillfallig)
                 .addGap(90, 90, 90))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbTitel)
+                .addGap(107, 107, 107)
+                .addComponent(lbValkomst)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbMenyval)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbTitel))
+                            .addComponent(jButton1))
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTillfallig)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         pack();
@@ -141,6 +158,10 @@ public class MenyValAgent extends javax.swing.JFrame {
  
     }
     }//GEN-LAST:event_lstAlternativKeyPressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
   
@@ -179,10 +200,11 @@ public class MenyValAgent extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JLabel lbMenyval;
     private javax.swing.JLabel lbTillfallig;
+    private javax.swing.JLabel lbTitel;
     private javax.swing.JLabel lbValkomst;
     private javax.swing.JList<String> lstAlternativ;
     private javax.swing.JScrollPane scrpAlternativ;
