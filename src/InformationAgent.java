@@ -189,9 +189,6 @@ public class InformationAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
-       
-        //Börjar med att säkerställa om användaren faktiskt vill ta bort agenten
-        
         //Metod för att radera agent
         taBortAgent();
         
@@ -229,8 +226,12 @@ public class InformationAgent extends javax.swing.JFrame {
               Start.idb.delete("Delete from innehar_utrustning where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from omradeschef where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from agent where namn = '" + agentNamn + "'");
-              
               JOptionPane.showMessageDialog(null, "Agent Borttagen!");
+              
+              //Uppdaterar texten, Först ändrar vi vår textArea till tomt, sedan tömmer vi vår combobox och sedan fyller den på nytt
+              infoLista.setText("");
+              Alternativen.removeAllItems();
+              fyllIagentComboBox();
               
           }
           
