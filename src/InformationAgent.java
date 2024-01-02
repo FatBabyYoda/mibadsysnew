@@ -189,7 +189,12 @@ public class InformationAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+       
+        //Börjar med att säkerställa om användaren faktiskt vill ta bort agenten
+        
         //Metod för att radera agent
+        taBortAgent();
+        
         
     }//GEN-LAST:event_jButton2MousePressed
     
@@ -205,6 +210,36 @@ public class InformationAgent extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
         }
     }
+    //Metod för att ställa SQL-frågor och ta bort agenten
+    private void taBortAgent()
+    {
+        //Vi börjar med att se om en agent blivit vald, detta genom i vår TextArea inte är tom
+        if(!infoLista.getText().isEmpty())
+        {
+          //Vår infoLista är inte tom, sql frågor ställs
+          try
+          {
+              //SQL frågor där raden inte ska raderas utan endast uppdateras
+              Start.idb.update("");
+              
+              //SQL frågor där all information ska tas bort
+          }
+          
+          catch(InfException e)
+          {
+              JOptionPane.showMessageDialog(null, "Något gick fel!");
+          }
+        }
+            
+        //Ingen vald egent, felmeddelande
+         else
+        {
+           JOptionPane.showMessageDialog(null, "Välj agent som ska raderas!"); 
+        }
+    
+      }
+    
+    
     /**
      * @param args the command line arguments
      */
