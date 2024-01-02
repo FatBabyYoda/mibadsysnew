@@ -34,17 +34,28 @@ public class InformationAgent extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnAvbryt = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         infoLista = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Alternativen = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Agent Information");
+
+        btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
+        btnAvbryt.setText("X");
+        btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAvbrytMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -53,7 +64,8 @@ public class InformationAgent extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAvbryt))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,6 +73,9 @@ public class InformationAgent extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btnAvbryt)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         infoLista.setColumns(20);
@@ -84,6 +99,16 @@ public class InformationAgent extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setForeground(new java.awt.Color(255, 0, 0));
+        jButton2.setText("Radera");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton2MousePressed(evt);
+            }
+        });
+
+        jButton3.setText("Uppdatera");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,27 +122,35 @@ public class InformationAgent extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(Alternativen, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(Alternativen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(Alternativen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -149,6 +182,18 @@ public class InformationAgent extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+        new MenyValAdmin().setVisible(true);
+    }//GEN-LAST:event_btnAvbrytMousePressed
+
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+        //Metod för att radera agent
+        taBortAgent();
+        
+        
+    }//GEN-LAST:event_jButton2MousePressed
     
     private void fyllIagentComboBox()
     {
@@ -162,6 +207,50 @@ public class InformationAgent extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
         }
     }
+    //Metod för att ställa SQL-frågor och ta bort agenten
+    private void taBortAgent()
+    {
+        //Vi börjar med att se om en agent blivit vald, detta genom i vår TextArea inte är tom
+        if(!infoLista.getText().isEmpty())
+        {
+          //Vår infoLista är inte tom, sql frågor ställs
+          try
+          {
+              //Vi sparar agent namn som en variabel, denna hämtar vi från vår combobox för att sedan utföra SQL frågor
+              String agentNamn = Alternativen.getSelectedItem().toString();
+              
+               //SQL frågor där raden inte ska raderas utan endast uppdateras, vi gör detta genom underfrågor då namnet är den information vi utgår ifrån
+              Start.idb.update("Update kontorschef set agent_id = null where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.update("Update Alien set ansvarig_agent = null where ansvarig_agent = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              //SQL frågor där all information ska tas bort
+              Start.idb.delete("Delete from innehar_utrustning where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.delete("Delete from omradeschef where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.delete("Delete from agent where namn = '" + agentNamn + "'");
+              JOptionPane.showMessageDialog(null, "Agent Borttagen!");
+              
+              //Uppdaterar texten, Först ändrar vi vår textArea till tomt, sedan tömmer vi vår combobox och sedan fyller den på nytt
+              infoLista.setText("");
+              Alternativen.removeAllItems();
+              fyllIagentComboBox();
+              
+          }
+          
+          catch(InfException e)
+          {
+              JOptionPane.showMessageDialog(null, "Något gick fel!");
+              System.out.println(e);
+          }
+        }
+            
+        //Ingen vald egent, felmeddelande
+         else
+        {
+           JOptionPane.showMessageDialog(null, "Välj agent som ska raderas!"); 
+        }
+    
+      }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -200,8 +289,11 @@ public class InformationAgent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Alternativen;
+    private javax.swing.JButton btnAvbryt;
     private javax.swing.JTextArea infoLista;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

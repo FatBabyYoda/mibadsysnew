@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
               <Component id="cbAlternativ" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -42,7 +42,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="lbTitel1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -59,12 +59,21 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JLabel" name="lbTitel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Alien inst&#xe4;llningar"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JComboBox" name="cbAlternativ">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="3">
             <StringItem index="0" value="Nyregistrera"/>
             <StringItem index="1" value="Uppdatera"/>
+            <StringItem index="2" value="Radera"/>
           </StringArray>
         </Property>
       </Properties>
@@ -79,14 +88,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOKActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbTitel1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Agent inst&#xe4;llningar"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnAvbryt">
       <Properties>
