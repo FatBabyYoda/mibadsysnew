@@ -31,14 +31,19 @@ public class Start {
   // new NyregistreraAlien().setVisible(true);       
 //=======
 
-    new LoginJFrame().setVisible(true);
+    //new LoginJFrame().setVisible(true);
+    //new LaggTillAgent().setVisible(true);
+    new InformationAgent().setVisible(true);
   
-//=======
+    //=======
   //  new LoginJFrame().setVisible(true);
+    //<<<<<<< HEAD
+    //=======
   //new LoginJFrame().setVisible(true);
 //>>>>>>> c8b79251592eb481380b29977e8cd4a471596599
   
  
+   // >>>>>>> e2e026212148600ccbdb62ee694a29ed8a85de09
 //>>>>>>> Stashed changes
     
   }
