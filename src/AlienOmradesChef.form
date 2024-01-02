@@ -24,39 +24,36 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lbAgentNamn" min="-2" pref="120" max="-2" attributes="0"/>
+                  <Component id="lbInfoTitel" min="-2" pref="70" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                      <Component id="lbSidTitel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="lbMailTitel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lbTelTitel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbAgentNamn" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="lbInfoTitel" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="lbMailTitel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lbTelTitel" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbAgentTel" min="-2" pref="97" max="-2" attributes="0"/>
-                                  <Component id="lbAgentMail" min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="lbAgentTel" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="lbAgentMail" min="-2" pref="75" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="166" max="32767" attributes="0"/>
+              <EmptySpace pref="187" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="lbSidTitel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lbAgentNamn" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lbInfoTitel" min="-2" max="-2" attributes="0"/>
@@ -66,11 +63,11 @@
                   <Component id="lbAgentTel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lbMailTitel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbAgentMail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbAgentMail" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="142" max="32767" attributes="0"/>
+              <EmptySpace pref="136" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,11 +83,6 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//F&#xf6;ljande kod upprepas l&#xe4;ngre ned fast att vi h&#xe4;mtar olika information, detta g&#xf6;rs genom en join &#xa;&#xa;try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT agent.namn from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentNamn.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lbSidTitel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Din omr&#xe5;deschef"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbInfoTitel">
       <Properties>
@@ -122,6 +114,14 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="try{&#xa;String getMail = Start.idb.fetchSingle(&quot;SELECT agent.epost from agent join Alien on Agent_ID = Ansvarig_agent where Alien.Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbAgentMail.setText(getMail);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTitel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Omr&#xe5;deschef"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
