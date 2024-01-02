@@ -38,6 +38,11 @@ public class AdminAgentVal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera" }));
+        cbAlternativ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAlternativActionPerformed(evt);
+            }
+        });
 
         btnOK.setText("OK");
         btnOK.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +104,7 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 break;
             
             case "Uppdatera":
-                new InformationAgent().setVisible(true);
+                new uppdateraAgentAdmin().setVisible(true);
                 break;
         }
     }//GEN-LAST:event_btnOKActionPerformed
@@ -108,6 +113,10 @@ public class AdminAgentVal extends javax.swing.JFrame {
         dispose();
         new MenyValAdmin().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
+
+    private void cbAlternativActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlternativActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAlternativActionPerformed
  
        
     /**

@@ -33,7 +33,8 @@ public class Start {
 
     //new LoginJFrame().setVisible(true);
     //new LaggTillAgent().setVisible(true);
-    new LoginJFrame().setVisible(true);
+    //////////////////new LoginJFrame().setVisible(true);
+   new uppdateraAgentAdmin().setVisible(true);
   
     //=======
   //  new LoginJFrame().setVisible(true);
