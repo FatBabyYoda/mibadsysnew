@@ -234,8 +234,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     "'"+namn+"',"+
                     "'"+Telefon+"',"+
                     plats+","+
-                    ansAgent+
-                    ")");
+                    ansAgent+")");
         }
         }
         catch (InfException e)
