@@ -216,7 +216,7 @@ public class InformationAgent extends javax.swing.JFrame {
           //Vår infoLista är inte tom, sql frågor ställs
           try
           {
-              //Vi sparar agentID som en variabel, denna hämtar vi från vår combobox för att sedan utföra SQL frågor
+              //Vi sparar agent namn som en variabel, denna hämtar vi från vår combobox för att sedan utföra SQL frågor
               String agentNamn = Alternativen.getSelectedItem().toString();
               
                //SQL frågor där raden inte ska raderas utan endast uppdateras, vi gör detta genom underfrågor då namnet är den information vi utgår ifrån

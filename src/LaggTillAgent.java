@@ -49,6 +49,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnAvbryt = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -78,6 +79,14 @@ public class LaggTillAgent extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Registrera Ny Agent");
 
+        btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
+        btnAvbryt.setText("X");
+        btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAvbrytMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -85,7 +94,8 @@ public class LaggTillAgent extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(btnAvbryt))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,6 +103,9 @@ public class LaggTillAgent extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btnAvbryt)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel2.setText("Namn:");
@@ -302,6 +315,11 @@ public class LaggTillAgent extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_regBtnActionPerformed
 
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+        new MenyValAdmin().setVisible(true);
+    }//GEN-LAST:event_btnAvbrytMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -340,6 +358,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox adminbox;
     private javax.swing.JButton backBtn;
+    private javax.swing.JButton btnAvbryt;
     private javax.swing.JTextField epostField;
     private javax.swing.JTextField idField;
     private javax.swing.JLabel jLabel1;

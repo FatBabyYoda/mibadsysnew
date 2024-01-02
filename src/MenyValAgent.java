@@ -35,7 +35,6 @@ public class MenyValAgent extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        lbValkomst = new javax.swing.JLabel();
         scrpAlternativ = new javax.swing.JScrollPane();
         lstAlternativ = new javax.swing.JList<>();
         lbTillfallig = new javax.swing.JLabel();
@@ -48,17 +47,6 @@ public class MenyValAgent extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 300));
-
-        lbValkomst.setText("Agent 1");
-        //Här önskar vi att välkomna agenten som har loggat in med namnet som är registrerat i databassen.
-        try{
-            String getNamn = Start.idb.fetchSingle("SELECT NAMN from agent where Epost ='" + Start.epost + "'");
-            lbValkomst.setText(getNamn);
-        }
-        catch(InfException e)
-        {
-            System.out.println (e);
-        }
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1. Min utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
@@ -92,33 +80,24 @@ public class MenyValAgent extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 97, Short.MAX_VALUE)
                 .addComponent(lbTillfallig)
                 .addGap(90, 90, 90))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(163, 163, 163)
                 .addComponent(lbTitel)
-                .addGap(107, 107, 107)
-                .addComponent(lbValkomst)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbTitel))
-                            .addComponent(jButton1))
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(lbTitel))
+                .addGap(33, 33, 33)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTillfallig)
@@ -209,7 +188,6 @@ public class MenyValAgent extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lbTillfallig;
     private javax.swing.JLabel lbTitel;
-    private javax.swing.JLabel lbValkomst;
     private javax.swing.JList<String> lstAlternativ;
     private javax.swing.JScrollPane scrpAlternativ;
     // End of variables declaration//GEN-END:variables
