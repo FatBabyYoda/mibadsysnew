@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import javax.swing.JOptionPane;
-import oru.inf.InfException;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,12 +7,12 @@ import oru.inf.InfException;
  *
  * @author willi
  */
-public class AdminAgentVal extends javax.swing.JFrame {
+public class AdminAlienVal extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminAgentVal
+     * Creates new form AdminAlienVal
      */
-    public AdminAgentVal() {
+    public AdminAlienVal() {
         initComponents();
     }
 
@@ -30,14 +25,17 @@ public class AdminAgentVal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbTitel1 = new javax.swing.JLabel();
         cbAlternativ = new javax.swing.JComboBox<>();
         btnOK = new javax.swing.JButton();
-        lbTitel1 = new javax.swing.JLabel();
         btnAvbryt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera" }));
+        lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel1.setText("Alien inställningar");
+
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera", "Radera" }));
 
         btnOK.setText("OK");
         btnOK.addActionListener(new java.awt.event.ActionListener() {
@@ -45,9 +43,6 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 btnOKActionPerformed(evt);
             }
         });
-
-        lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbTitel1.setText("Agent inställningar");
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
         btnAvbryt.setText("X");
@@ -95,20 +90,12 @@ public class AdminAgentVal extends javax.swing.JFrame {
         switch(cbAlternativ.getSelectedItem().toString())
         {
             case "Nyregistrera":
-                new LaggTillAgent().setVisible(true);
-                break;
-            
-            case "Sök":
-                new InformationAgent().setVisible(true);
-                break;
-            
+            new NyregistreraAlien().setVisible(true);
+            break;
+
             case "Uppdatera":
-                //Mer kod kommer
-                break;
-                
-            case "Rader":
-                //Mer kod kommer
-                break;
+            //Mer kod kommer
+            break;
         }
     }//GEN-LAST:event_btnOKActionPerformed
 
@@ -116,8 +103,7 @@ public class AdminAgentVal extends javax.swing.JFrame {
         dispose();
         new MenyValAdmin().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
- 
-       
+
     /**
      * @param args the command line arguments
      */
@@ -135,20 +121,20 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlienVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlienVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlienVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAlienVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAgentVal().setVisible(true);
+                new AdminAlienVal().setVisible(true);
             }
         });
     }

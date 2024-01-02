@@ -61,7 +61,7 @@ public class MenyValAgent extends javax.swing.JFrame {
         }
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. Min utrustning", "2. Alien", "3. Inställningar" };
+            String[] strings = { "1. Min utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -147,8 +147,12 @@ public class MenyValAgent extends javax.swing.JFrame {
                     System.out.println("Mer kod kommer 2");
                     break;
                     
+                case "3. Agent":
+                    //Mer kod kommer
+                    break;
+                    
                     //Nytt fönster för kontoiställningar
-                case "3. Inställningar":
+                case "4. Inställningar":
                     dispose();
                     new Installningar().setVisible(true);
                     break;
