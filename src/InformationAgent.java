@@ -215,8 +215,9 @@ public class InformationAgent extends javax.swing.JFrame {
         //Metod för att uppdatera agenten, men först önskar vi att säkerställa att det finns en vald agent
         if(!infoLista.getText().isEmpty())
         {
+            //Har en agents valts önskar vi att skicka med den informationen till den ny Jframen. 
             String valdAgent = Alternativen.getSelectedItem().toString();
-            new uppdateraAgentAdmin(valdAgent).setVisible(true);
+            //new uppdateraAgentAdmin(valdAgent).setVisible(true);
         }
         
         else 
