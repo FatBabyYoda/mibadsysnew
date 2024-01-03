@@ -16,12 +16,13 @@ import oru.inf.InfException;
 //Små ändringar i klassen och konstruktorn. Nytt fält som är vald agent, denna parameter ska tas emot från förgående Jframe
 public class uppdateraAgentAdmin extends javax.swing.JFrame {
     //Vi använder oss av samma variabel som i vår förgående JFrame (InformationAgent)
-    private String valdAgent;
+    
     /**
      * Creates new form uppdateraAgentAdmin
      */
-    public uppdateraAgentAdmin(String valdAgent) {
+    public uppdateraAgentAdmin() {
         initComponents();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         this.valdAgent = valdAgent;
 =======
@@ -30,6 +31,8 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         fyllOmradeComboBox();
         fyllKAgentComboBox();
 >>>>>>> Stashed changes
+=======
+>>>>>>> 8d118fb0994c217d9ca3bea9567eb55d99318426
     }
 
     /**
@@ -379,12 +382,12 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        //TILLFÄLLIGT STÄNGT AV DENNA, EFTERSOM VI KOMMER FRÅN INFORMATIONAGENT TILL DENNA JFRAME
-      //java.awt.EventQueue.invokeLater(new Runnable() {
-            //public void run() {
-                //new uppdateraAgentAdmin().setVisible(true);
-            //}
-        //});
+        
+     java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new uppdateraAgentAdmin().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
