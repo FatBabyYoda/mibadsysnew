@@ -276,7 +276,11 @@ public class AndraAlienInfo extends javax.swing.JFrame {
               
               JOptionPane.showMessageDialog(null, "Alien borttagen!");
               
-              //Uppdaterar texten, Först ändrar vi vår textArea till tom, sedan tömmer vi vår combobox och fyller den på nytt
+              //Uppdaterar texten, Först ändrar vi våra textfield till tom, sedan tömmer vi 
+              tfLosen.setText("");
+            tfNamn.setText("");
+            tfTel.setText("");
+            tfRegDatum.setText("");
               
               
           }
