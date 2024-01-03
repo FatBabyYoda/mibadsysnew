@@ -226,7 +226,7 @@ public class InformationAgent extends javax.swing.JFrame {
         if(!infoLista.getText().isEmpty())
         {
             //Har en agents valts önskar vi att skicka med den informationen till den ny Jframen. 
-            String valdAgent = Alternativen.getSelectedItem().toString();
+            //String valdAgent = Alternativen.getSelectedItem().toString();
             //new uppdateraAgentAdmin(valdAgent).setVisible(true);
         }
         
