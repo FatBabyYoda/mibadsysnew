@@ -7,6 +7,7 @@
  *
  * @author Ägaren
  */
+//Små ändringar i klassen och konstruktorn. Nytt fält som är vald agent, denna parameter ska tas emot från förgående Jframe
 public class uppdateraAgentAdmin extends javax.swing.JFrame {
     //Vi använder oss av samma variabel som i vår förgående JFrame (InformationAgent)
     private String valdAgent;
