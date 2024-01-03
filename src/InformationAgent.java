@@ -212,8 +212,17 @@ public class InformationAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRaderaMousePressed
 
     private void jButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MousePressed
-        //Metod för att uppdatera agenten
-        new uppdateraAgentAdmin().setVisible(true);
+        //Metod för att uppdatera agenten, men först önskar vi att säkerställa att det finns en vald agent
+        if(!infoLista.getText().isEmpty())
+        {
+            new uppdateraAgentAdmin().setVisible(true);
+        }
+        
+        else 
+        {
+            JOptionPane.showMessageDialog(null, "Välj agent som ska uppdateras!");
+        }
+        
     }//GEN-LAST:event_jButton3MousePressed
        
     private void fyllIagentComboBox()
