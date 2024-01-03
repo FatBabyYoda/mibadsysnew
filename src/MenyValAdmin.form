@@ -33,12 +33,10 @@
               <Component id="lbTillfallig" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-              <Component id="lbValkomst" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="lbTitel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -46,17 +44,11 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbValkomst" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="lbTitel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbTitel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="scrpAlternativ" min="-2" pref="152" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbTillfallig" min="-2" max="-2" attributes="0"/>
@@ -66,14 +58,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="lbValkomst">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Admin 1"/>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="//H&#xe4;r &#xf6;nskar vi att v&#xe4;lkomna agenten som har loggat in med namnet som &#xe4;r registrerat i databassen.&#xa;try{&#xa;String getNamn = Start.idb.fetchSingle(&quot;SELECT NAMN from agent where Epost =&apos;&quot; + Start.epost + &quot;&apos;&quot;);&#xa;lbValkomst.setText(getNamn);&#xa;}&#xa;catch(InfException e)&#xa;{&#xa;    System.out.println (e);&#xa;}"/>
-      </AuxValues>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="scrpAlternativ">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>

@@ -41,7 +41,7 @@ public class InformationAgent extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         Alternativen = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRadera = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,11 +54,6 @@ public class InformationAgent extends javax.swing.JFrame {
         btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAvbrytMousePressed(evt);
-            }
-        });
-        btnAvbryt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAvbrytActionPerformed(evt);
             }
         });
 
@@ -105,23 +100,18 @@ public class InformationAgent extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Radera");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnRadera.setForeground(new java.awt.Color(255, 0, 0));
+        btnRadera.setText("Radera");
+        btnRadera.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButton2MousePressed(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRaderaMousePressed(evt);
             }
         });
 
         jButton3.setText("Uppdatera");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton3MousePressed(evt);
             }
         });
 
@@ -149,7 +139,7 @@ public class InformationAgent extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(btnRadera)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -159,7 +149,7 @@ public class InformationAgent extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jButton2))
+                    .addComponent(btnRadera))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -203,30 +193,29 @@ public class InformationAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        //Metod för att stänga fönstret och öppna förgående
         dispose();
         new MenyValAdmin().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
-    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
-        //Metod för att radera agent
-        taBortAgent();
+    private void btnRaderaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRaderaMousePressed
+        //Ber användaren att bekräfta sitt val innan agenten raderas
+        int bekrafta = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill radera agenten?", "" ,JOptionPane.YES_NO_OPTION);
+        if(bekrafta == JOptionPane.YES_OPTION)
+        {
+            //Metod för att radera agent
+            taBortAgent();
+        }
         
+        //Ingen else sats behövs eftersom att fönstret endast ska stängas ned
         
-    }//GEN-LAST:event_jButton2MousePressed
+    }//GEN-LAST:event_btnRaderaMousePressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        // TA BORT KNAPPEN
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void btnAvbrytActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvbrytActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAvbrytActionPerformed
-    
+    private void jButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MousePressed
+        //Metod för att uppdatera agenten
+        new uppdateraAgentAdmin().setVisible(true);
+    }//GEN-LAST:event_jButton3MousePressed
+       
     private void fyllIagentComboBox()
     {
         try {
@@ -258,9 +247,9 @@ public class InformationAgent extends javax.swing.JFrame {
               Start.idb.delete("Delete from innehar_utrustning where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from omradeschef where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from agent where namn = '" + agentNamn + "'");
-              JOptionPane.showMessageDialog(null, "Agent Borttagen!");
+              JOptionPane.showMessageDialog(null, "Agent borttagen!");
               
-              //Uppdaterar texten, Först ändrar vi vår textArea till tomt, sedan tömmer vi vår combobox och sedan fyller den på nytt
+              //Uppdaterar texten, Först ändrar vi vår textArea till tom, sedan tömmer vi vår combobox och fyller den på nytt
               infoLista.setText("");
               Alternativen.removeAllItems();
               fyllIagentComboBox();
@@ -322,9 +311,9 @@ public class InformationAgent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Alternativen;
     private javax.swing.JButton btnAvbryt;
+    private javax.swing.JButton btnRadera;
     private javax.swing.JTextArea infoLista;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

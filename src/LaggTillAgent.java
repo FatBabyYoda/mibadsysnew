@@ -317,7 +317,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
-        new MenyValAdmin().setVisible(true);
+        new AdminAgentVal().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     /**

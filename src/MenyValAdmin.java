@@ -29,7 +29,6 @@ public class MenyValAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbValkomst = new javax.swing.JLabel();
         scrpAlternativ = new javax.swing.JScrollPane();
         lstAlternativ = new javax.swing.JList<>();
         lbTillfallig = new javax.swing.JLabel();
@@ -37,17 +36,6 @@ public class MenyValAdmin extends javax.swing.JFrame {
         lbTitel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lbValkomst.setText("Admin 1");
-        //Här önskar vi att välkomna agenten som har loggat in med namnet som är registrerat i databassen.
-        try{
-            String getNamn = Start.idb.fetchSingle("SELECT NAMN from agent where Epost ='" + Start.epost + "'");
-            lbValkomst.setText(getNamn);
-        }
-        catch(InfException e)
-        {
-            System.out.println (e);
-        }
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "1. Utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
@@ -87,24 +75,18 @@ public class MenyValAdmin extends javax.swing.JFrame {
                 .addComponent(lbTillfallig)
                 .addGap(90, 90, 90))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbTitel)
-                .addGap(101, 101, 101)
-                .addComponent(lbValkomst)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(156, 156, 156)
                 .addComponent(jButton1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbValkomst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbTitel)))
-                    .addComponent(jButton1))
-                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(lbTitel))
+                .addGap(33, 33, 33)
                 .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbTillfallig)
@@ -191,7 +173,6 @@ public class MenyValAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel lbTillfallig;
     private javax.swing.JLabel lbTitel;
-    private javax.swing.JLabel lbValkomst;
     private javax.swing.JList<String> lstAlternativ;
     private javax.swing.JScrollPane scrpAlternativ;
     // End of variables declaration//GEN-END:variables
