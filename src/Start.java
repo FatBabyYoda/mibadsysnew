@@ -35,7 +35,8 @@ public class Start {
     //new LaggTillAgent().setVisible(true);
     //////////////////new LoginJFrame().setVisible(true);
    //new uppdateraAgentAdmin().setVisible(true);
-   new LoginJFrame().setVisible(true);
+   //new LoginJFrame().setVisible(true);
+   new InformationAgent().setVisible(true);
   
     //=======
   //  new LoginJFrame().setVisible(true);

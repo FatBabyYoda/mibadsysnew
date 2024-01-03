@@ -107,11 +107,21 @@ public class InformationAgent extends javax.swing.JFrame {
                 btnRaderaMousePressed(evt);
             }
         });
+        btnRadera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaderaActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Uppdatera");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jButton3MousePressed(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -225,6 +235,14 @@ public class InformationAgent extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton3MousePressed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnRaderaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaderaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRaderaActionPerformed
        
     private void fyllIagentComboBox()
     {
