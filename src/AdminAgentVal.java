@@ -37,7 +37,7 @@ public class AdminAgentVal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera/Radera" }));
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Ändra", "Radera" }));
         cbAlternativ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbAlternativActionPerformed(evt);
@@ -71,7 +71,7 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 .addComponent(cbAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOK)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbTitel1)
@@ -102,8 +102,12 @@ public class AdminAgentVal extends javax.swing.JFrame {
             case "Nyregistrera":
                 new LaggTillAgent().setVisible(true);
                 break;
+                
+            case "Ändra":
+            new uppdateraAgentAdmin().setVisible(true);
+            break;
             
-            case "Uppdatera/Radera":
+            case "Radera":
                 new InformationAgent().setVisible(true);
                 break;
         }

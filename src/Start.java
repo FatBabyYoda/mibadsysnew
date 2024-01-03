@@ -27,7 +27,8 @@ public class Start {
                     System.out.println(undatag);
                 }
       
-                new TaBortUtrustning().setVisible(true);
+                new AndraInformationAgent().setVisible(true);
+
 
   }
 }
