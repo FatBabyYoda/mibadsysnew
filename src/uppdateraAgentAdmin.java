@@ -8,12 +8,14 @@
  * @author Ägaren
  */
 public class uppdateraAgentAdmin extends javax.swing.JFrame {
-
+    //Vi använder oss av samma variabel som i vår förgående JFrame (InformationAgent)
+    private String valdAgent;
     /**
      * Creates new form uppdateraAgentAdmin
      */
-    public uppdateraAgentAdmin() {
+    public uppdateraAgentAdmin(String valdAgent) {
         initComponents();
+        this.valdAgent = valdAgent;
     }
 
     /**
@@ -215,11 +217,12 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new uppdateraAgentAdmin().setVisible(true);
-            }
-        });
+        //TILLFÄLLIGT STÄNGT AV DENNA, EFTERSOM VI KOMMER FRÅN INFORMATIONAGENT TILL DENNA JFRAME
+      //java.awt.EventQueue.invokeLater(new Runnable() {
+            //public void run() {
+                //new uppdateraAgentAdmin().setVisible(true);
+            //}
+        //});
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

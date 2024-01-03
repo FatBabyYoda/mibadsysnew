@@ -195,7 +195,7 @@ public class InformationAgent extends javax.swing.JFrame {
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         //Metod för att stänga fönstret och öppna förgående
         dispose();
-        new MenyValAdmin().setVisible(true);
+        new AdminAgentVal().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     private void btnRaderaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRaderaMousePressed
@@ -215,7 +215,8 @@ public class InformationAgent extends javax.swing.JFrame {
         //Metod för att uppdatera agenten, men först önskar vi att säkerställa att det finns en vald agent
         if(!infoLista.getText().isEmpty())
         {
-            new uppdateraAgentAdmin().setVisible(true);
+            String valdAgent = Alternativen.getSelectedItem().toString();
+            new uppdateraAgentAdmin(valdAgent).setVisible(true);
         }
         
         else 

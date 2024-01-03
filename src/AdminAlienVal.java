@@ -35,7 +35,7 @@ public class AdminAlienVal extends javax.swing.JFrame {
         lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbTitel1.setText("Alien inställningar");
 
-        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera", "Radera" }));
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Sök", "Uppdatera/Radera" }));
 
         btnOK.setText("OK");
         btnOK.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +61,7 @@ public class AdminAlienVal extends javax.swing.JFrame {
                 .addComponent(cbAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOK)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbTitel1)
@@ -93,8 +93,12 @@ public class AdminAlienVal extends javax.swing.JFrame {
             new NyregistreraAlien().setVisible(true);
             break;
 
-            case "Uppdatera":
-            //Mer kod kommer
+            case "Sök":
+            new HittaAlienPlats().setVisible(true);
+            break;
+            
+            case "Uppdatera/Radera":
+            //Metod kommer
             break;
         }
     }//GEN-LAST:event_btnOKActionPerformed
