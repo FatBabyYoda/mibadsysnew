@@ -16,7 +16,8 @@ public class Start {
     public static String epost;
     public static void main(String args[])
   {
-    try
+    
+    try 
         {
               idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
         }
@@ -26,27 +27,7 @@ public class Start {
                     System.out.println(undatag);
                 }
       
-   
-//<<<<<<< Updated upstream
-  // new NyregistreraAlien().setVisible(true);       
-//=======
+                new TaBortUtrustning().setVisible(true);
 
-    //new LoginJFrame().setVisible(true);
-    //new LaggTillAgent().setVisible(true);
-    //////////////////new LoginJFrame().setVisible(true);
-   //new uppdateraAgentAdmin().setVisible(true);
-   new LoginJFrame().setVisible(true);
-  
-    //=======
-  //  new LoginJFrame().setVisible(true);
-    //<<<<<<< HEAD
-    //=======
-  //new LoginJFrame().setVisible(true);
-//>>>>>>> c8b79251592eb481380b29977e8cd4a471596599
-  
- 
-   // >>>>>>> e2e026212148600ccbdb62ee694a29ed8a85de09
-//>>>>>>> Stashed changes
-    
   }
 }
