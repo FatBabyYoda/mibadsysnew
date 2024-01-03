@@ -10,13 +10,12 @@
 //Små ändringar i klassen och konstruktorn. Nytt fält som är vald agent, denna parameter ska tas emot från förgående Jframe
 public class uppdateraAgentAdmin extends javax.swing.JFrame {
     //Vi använder oss av samma variabel som i vår förgående JFrame (InformationAgent)
-    private String valdAgent;
+    
     /**
      * Creates new form uppdateraAgentAdmin
      */
-    public uppdateraAgentAdmin(String valdAgent) {
+    public uppdateraAgentAdmin() {
         initComponents();
-        this.valdAgent = valdAgent;
     }
 
     /**
@@ -187,7 +186,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         //Metod för att stänga fönstret och öppna förgående
         dispose();
-        new InformationAgent().setVisible(true);
+        new AdminAgentVal().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     /**
