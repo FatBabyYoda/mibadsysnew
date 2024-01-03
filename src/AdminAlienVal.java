@@ -98,7 +98,7 @@ public class AdminAlienVal extends javax.swing.JFrame {
             break;
             
             case "Uppdatera/Radera":
-            //Metod kommer
+            new AndraAlienInfo().setVisible(true);
             break;
         }
     }//GEN-LAST:event_btnOKActionPerformed

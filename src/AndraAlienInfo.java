@@ -51,6 +51,8 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         cbAnsAgnt = new javax.swing.JComboBox<>();
         cbPlats = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        btnAvbryt = new javax.swing.JButton();
+        btnRadera = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +75,22 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
+        btnAvbryt.setText("X");
+        btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAvbrytMousePressed(evt);
+            }
+        });
+
+        btnRadera.setForeground(new java.awt.Color(255, 0, 0));
+        btnRadera.setText("Radera");
+        btnRadera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnRaderaMousePressed(evt);
             }
         });
 
@@ -99,9 +117,12 @@ public class AndraAlienInfo extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(76, 76, 76))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(58, 58, 58))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRadera)
+                        .addContainerGap())
+                    .addComponent(btnAvbryt, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,8 +136,11 @@ public class AndraAlienInfo extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel1))
+                            .addComponent(btnAvbryt))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tfEpostSok, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +158,9 @@ public class AndraAlienInfo extends javax.swing.JFrame {
                         .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(btnRadera))))
                 .addGap(23, 23, 23))
         );
 
@@ -172,6 +198,24 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     System.out.println(ex);
 }
     }//GEN-LAST:event_tfEpostSokKeyReleased
+
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+        new AdminAlienVal().setVisible(true);
+    }//GEN-LAST:event_btnAvbrytMousePressed
+
+    private void btnRaderaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRaderaMousePressed
+        //Ber användaren att bekräfta sitt val innan alien raderas
+        int bekrafta = JOptionPane.showConfirmDialog(null, "Är du säker?", "" ,JOptionPane.YES_NO_OPTION);
+        if(bekrafta == JOptionPane.YES_OPTION)
+        {
+            //Metod för att radera aline
+            taBortAlien();
+        }
+
+        //Ingen else sats behövs eftersom att fönstret endast ska stängas ned
+
+    }//GEN-LAST:event_btnRaderaMousePressed
     private void getAlienInfo() {                                            
         try {
             // TODO add your handling code here:
@@ -213,6 +257,45 @@ public class AndraAlienInfo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
                 }  
             }
+    
+    private void taBortAlien()
+    {
+        //Vi börjar med att se variabeln epost är ifylld, detta enligt metoden getAlienInfo()
+        if(Epost != null)
+        {
+          //Vår infoLista är inte tom, sql frågor ställs
+          try
+          {
+              //Vi använder oss av Epost för att ställa våra SQL Frågor
+             
+              //SQL frågor där all information ska tas bort
+              Start.idb.delete("Delete from boglodite where alien_id = (select Alien_ID from alien where epost = '" + Epost + "')");
+              Start.idb.delete("Delete from worm where alien_id = (select Alien_ID from alien where epost = '" + Epost + "')");
+              Start.idb.delete("Delete from squid where alien_id = (select Alien_ID from alien where epost = '" + Epost + "')");
+              Start.idb.delete("Delete from alien where epost = '" + Epost + "'");
+              
+              JOptionPane.showMessageDialog(null, "Alien borttagen!");
+              
+              //Uppdaterar texten, Först ändrar vi vår textArea till tom, sedan tömmer vi vår combobox och fyller den på nytt
+              
+              
+          }
+          
+          catch(InfException e)
+          {
+              JOptionPane.showMessageDialog(null, "Något gick fel!");
+              System.out.println(e);
+          }
+        }
+            
+        //Ingen vald alien, felmeddelande
+         else
+        {
+           JOptionPane.showMessageDialog(null, "Välj alien som ska raderas!"); 
+        }
+    
+      }
+    
         
     /**
      * @param args the command line arguments
@@ -250,6 +333,8 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAvbryt;
+    private javax.swing.JButton btnRadera;
     private javax.swing.JComboBox<String> cbAnsAgnt;
     private javax.swing.JComboBox<String> cbPlats;
     private javax.swing.JButton jButton1;

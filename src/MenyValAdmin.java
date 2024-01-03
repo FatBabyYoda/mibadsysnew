@@ -111,13 +111,12 @@ public class MenyValAdmin extends javax.swing.JFrame {
                     break;
 
                     case "2. Alien":
-                    //;
+                    new AdminAlienVal().setVisible(true);
                     break;
 
                     //Nytt fönster för att hantera agenter/hämta information om agenter
                     case "3. Agent":
                     new AdminAgentVal().setVisible(true);
-                    //Kod här 
                     break;
                     
                     //Inställningar
