@@ -187,7 +187,7 @@ public class AndraInformationAgent extends javax.swing.JFrame {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
