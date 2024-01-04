@@ -35,7 +35,7 @@ public class AdminAlienVal extends javax.swing.JFrame {
         lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbTitel1.setText("Alien inställningar");
 
-        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Sök", "Uppdatera/Radera" }));
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera/Radera" }));
 
         btnOK.setText("OK");
         btnOK.addActionListener(new java.awt.event.ActionListener() {
@@ -45,7 +45,7 @@ public class AdminAlienVal extends javax.swing.JFrame {
         });
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
-        btnAvbryt.setText("X");
+        btnAvbryt.setText("Tillbaka");
         btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAvbrytMousePressed(evt);
@@ -90,14 +90,12 @@ public class AdminAlienVal extends javax.swing.JFrame {
         switch(cbAlternativ.getSelectedItem().toString())
         {
             case "Nyregistrera":
+            dispose();
             new NyregistreraAlien().setVisible(true);
-            break;
-
-            case "Sök":
-            new HittaAlienPlats().setVisible(true);
             break;
             
             case "Uppdatera/Radera":
+            dispose();
             new AndraAlienInfo().setVisible(true);
             break;
         }

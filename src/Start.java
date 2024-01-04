@@ -27,7 +27,7 @@ public class Start {
                     System.out.println(undatag);
                 }
       
-                new AndraInformationAgent().setVisible(true);
+                new LoginJFrame().setVisible(true);
 
 
   }

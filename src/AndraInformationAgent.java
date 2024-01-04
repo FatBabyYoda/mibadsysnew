@@ -373,7 +373,8 @@ private JFrame frame;
         if (JOptionPane.showConfirmDialog(frame, "Är du säker på att du vill avsluta?", "Meddelande",
                 JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
         {
-            System.exit(0);
+            dispose();
+            new AdminAgentVal().setVisible(true);
         }
     }//GEN-LAST:event_btnAvslutaActionPerformed
 

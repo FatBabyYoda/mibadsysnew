@@ -36,12 +36,13 @@ public class AndraLosenord extends javax.swing.JFrame {
         pfUpprepa = new javax.swing.JPasswordField();
         btnSpara = new javax.swing.JButton();
         btnAvbryt = new javax.swing.JButton();
+        lbTitel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbNyttTitel.setText("Nytt lösenord");
+        lbNyttTitel.setText("Nytt lösenord:");
 
-        lbUpprepaTitel.setText("Upprepa lösenordet");
+        lbUpprepaTitel.setText("Upprepa lösenordet:");
 
         btnSpara.setText("Spara");
         btnSpara.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -57,27 +58,37 @@ public class AndraLosenord extends javax.swing.JFrame {
             }
         });
 
+        lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel1.setText("Ändra lösenord");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbNyttTitel)
-                    .addComponent(btnSpara, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAvbryt)
-                    .addComponent(lbUpprepaTitel)
-                    .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(94, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbNyttTitel)
+                            .addComponent(btnSpara, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(pfNytt, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAvbryt)
+                            .addComponent(lbUpprepaTitel)
+                            .addComponent(pfUpprepa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(lbTitel1)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
+                .addContainerGap()
+                .addComponent(lbTitel1)
+                .addGap(97, 97, 97)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNyttTitel)
                     .addComponent(lbUpprepaTitel))
@@ -114,8 +125,7 @@ public class AndraLosenord extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Ditt lösenord är nu uppdaterat!");
             dispose();
-            // Eftersom att aliens och agent använder sig av samma lösenords ändrare fungerar inte denna, får se över senare
-            //new Installningar().setVisible(true);
+            new Installningar().setVisible(true);
             }
         
         //Felmeddelande om lösnorden inte är korrekta
@@ -130,8 +140,10 @@ public class AndraLosenord extends javax.swing.JFrame {
     //Stänger fönstret och öppnar åter upp inställningsvyn
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
+        new Installningar().setVisible(true);
+     
     }//GEN-LAST:event_btnAvbrytMousePressed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -171,6 +183,7 @@ public class AndraLosenord extends javax.swing.JFrame {
     private javax.swing.JButton btnAvbryt;
     private javax.swing.JButton btnSpara;
     private javax.swing.JLabel lbNyttTitel;
+    private javax.swing.JLabel lbTitel1;
     private javax.swing.JLabel lbUpprepaTitel;
     private javax.swing.JPasswordField pfNytt;
     private javax.swing.JPasswordField pfUpprepa;

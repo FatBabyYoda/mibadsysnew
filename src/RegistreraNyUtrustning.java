@@ -64,7 +64,12 @@ public class RegistreraNyUtrustning extends javax.swing.JFrame {
         txtFieldId.setEditable(false);
 
         backBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        backBtn.setText("Back");
+        backBtn.setText("Tillbaka");
+        backBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backBtnMousePressed(evt);
+            }
+        });
 
         regBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         regBtn.setText("Registrera");
@@ -150,6 +155,11 @@ public class RegistreraNyUtrustning extends javax.swing.JFrame {
     }
          
     }//GEN-LAST:event_regBtnActionPerformed
+
+    private void backBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBtnMousePressed
+        dispose();
+        new AgentUtrustningVal().setVisible(true);
+    }//GEN-LAST:event_backBtnMousePressed
 
     /**
      * @param args the command line arguments

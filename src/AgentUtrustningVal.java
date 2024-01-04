@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import javax.swing.JOptionPane;
-import oru.inf.InfException;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,12 +7,12 @@ import oru.inf.InfException;
  *
  * @author willi
  */
-public class AdminAgentVal extends javax.swing.JFrame {
+public class AgentUtrustningVal extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminAgentVal
+     * Creates new form AgentUtrustningVal
      */
-    public AdminAgentVal() {
+    public AgentUtrustningVal() {
         initComponents();
     }
 
@@ -30,14 +25,17 @@ public class AdminAgentVal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbTitel1 = new javax.swing.JLabel();
         cbAlternativ = new javax.swing.JComboBox<>();
         btnOK = new javax.swing.JButton();
-        lbTitel1 = new javax.swing.JLabel();
         btnAvbryt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyregistrera", "Uppdatera", "Redigera", "Sök/Radera" }));
+        lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbTitel1.setText("Utrustning val");
+
+        cbAlternativ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Registrera", "Visa" }));
         cbAlternativ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbAlternativActionPerformed(evt);
@@ -50,9 +48,6 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 btnOKActionPerformed(evt);
             }
         });
-
-        lbTitel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lbTitel1.setText("Agent inställningar");
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
         btnAvbryt.setText("Tillbaka");
@@ -71,7 +66,7 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 .addComponent(cbAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOK)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbTitel1)
@@ -96,41 +91,28 @@ public class AdminAgentVal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbAlternativActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlternativActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAlternativActionPerformed
+
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
         switch(cbAlternativ.getSelectedItem().toString())
         {
-            case "Nyregistrera":
-                dispose();
-                new LaggTillAgent().setVisible(true);
-                break;
-                
-            case "Uppdatera":
-                dispose();
-                new uppdateraAgentAdmin().setVisible(true);
-                break;
-                
-            case "Redigera":
-                dispose();
-                new AndraInformationAgent().setVisible(true);
-                break;
-            
-            case "Sök/Radera":
-                dispose();
-                new InformationAgent().setVisible(true);
-                break;
+            case "Registrera":
+            new RegistreraNyUtrustning().setVisible(true);
+            break;
+
+            case "Visa":
+            new AgentMinUtrustning().setVisible(true);
+            break;
         }
     }//GEN-LAST:event_btnOKActionPerformed
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
-        new MenyValAdmin().setVisible(true);
+        new MenyValAgent().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
-    private void cbAlternativActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlternativActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbAlternativActionPerformed
- 
-       
     /**
      * @param args the command line arguments
      */
@@ -148,20 +130,20 @@ public class AdminAgentVal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgentUtrustningVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgentUtrustningVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgentUtrustningVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAgentVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgentUtrustningVal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAgentVal().setVisible(true);
+                new AgentUtrustningVal().setVisible(true);
             }
         });
     }

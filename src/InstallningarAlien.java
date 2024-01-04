@@ -110,7 +110,7 @@ public class InstallningarAlien extends javax.swing.JFrame {
         });
 
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("X");
+        jButton1.setText("Tillbaka");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -138,7 +138,7 @@ public class InstallningarAlien extends javax.swing.JFrame {
                             .addComponent(btnAndraLosen))
                         .addComponent(lbNamnTitel)
                         .addComponent(lbEpostTitel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(jButton1))
         );
         layout.setVerticalGroup(

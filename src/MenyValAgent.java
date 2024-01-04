@@ -46,10 +46,9 @@ public class MenyValAgent extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 300));
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. Min utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
+            String[] strings = { "1. Utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -63,7 +62,7 @@ public class MenyValAgent extends javax.swing.JFrame {
         lbTillfallig.setText("Välj alternativ genom att trycka på enter");
 
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("X");
+        jButton1.setText("Tillbaka");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -117,17 +116,19 @@ public class MenyValAgent extends javax.swing.JFrame {
        
         if(valtAlternativ != null){
             switch(valtAlternativ){
-                case "1. Min utrustning":
-                    new AgentMinUtrustning().setVisible(true);
+                case "1. Utrustning":
+                    dispose();
+                    new AgentUtrustningVal().setVisible(true);
                     break;
                     
                 case "2. Alien":
-                    
-                    System.out.println("Mer kod kommer 2");
+                    dispose();
+                    new AgentAlienVal().setVisible(true);
                     break;
                     
                 case "3. Agent":
-                    //Mer kod kommer
+                    dispose();
+                    new OmradeInf().setVisible(true);
                     break;
                     
                     //Nytt fönster för kontoiställningar
@@ -144,6 +145,7 @@ public class MenyValAgent extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
+        new LoginJFrame().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     

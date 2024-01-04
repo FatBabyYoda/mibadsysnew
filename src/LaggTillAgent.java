@@ -62,7 +62,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
         uprField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         omradeCB = new javax.swing.JComboBox<>();
-        backBtn = new javax.swing.JButton();
         regBtn = new javax.swing.JButton();
         idField = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -80,7 +79,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
         jLabel1.setText("Registrera Ny Agent");
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
-        btnAvbryt.setText("X");
+        btnAvbryt.setText("Tillbaka");
         btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAvbrytMousePressed(evt);
@@ -94,7 +93,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(btnAvbryt))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,13 +122,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
         omradeCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 omradeCBActionPerformed(evt);
-            }
-        });
-
-        backBtn.setText("Back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
             }
         });
 
@@ -183,13 +175,10 @@ public class LaggTillAgent extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(regBtn, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(regBtn))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,7 +227,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
                     .addComponent(omradeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backBtn)
                     .addComponent(regBtn)
                     .addComponent(adminbox))
                 .addContainerGap())
@@ -265,11 +253,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_omradeCBActionPerformed
 
-
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-        // gå tillbaka
-    }//GEN-LAST:event_backBtnActionPerformed
 
     private void regBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regBtnActionPerformed
         try {
@@ -357,7 +340,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox adminbox;
-    private javax.swing.JButton backBtn;
     private javax.swing.JButton btnAvbryt;
     private javax.swing.JTextField epostField;
     private javax.swing.JTextField idField;

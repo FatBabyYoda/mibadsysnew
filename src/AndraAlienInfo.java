@@ -79,7 +79,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         });
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
-        btnAvbryt.setText("X");
+        btnAvbryt.setText("Tillbaka");
         btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAvbrytMousePressed(evt);

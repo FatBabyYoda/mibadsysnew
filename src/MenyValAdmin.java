@@ -38,7 +38,7 @@ public class MenyValAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lstAlternativ.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "1. Utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
+            String[] strings = { "1. Ta bort utrustning", "2. Alien", "3. Agent", "4. Inställningar" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -52,7 +52,7 @@ public class MenyValAdmin extends javax.swing.JFrame {
         lbTillfallig.setText("Välj alternativ genom att trycka på enter");
 
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("X");
+        jButton1.setText("Tillbaka");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -66,10 +66,6 @@ public class MenyValAdmin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 97, Short.MAX_VALUE)
                 .addComponent(lbTillfallig)
@@ -77,8 +73,12 @@ public class MenyValAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbTitel)
-                .addGap(156, 156, 156)
+                .addGap(107, 107, 107)
                 .addComponent(jButton1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(scrpAlternativ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,23 +105,28 @@ public class MenyValAdmin extends javax.swing.JFrame {
 
             if(valtAlternativ != null){
                 switch(valtAlternativ){
-                    case "1. Utrusning":
-
-                    System.out.println("Mer kod kommer");
-                    break;
+            
+                    case "1. Ta bort utrustning":
+                        dispose();
+                        new TaBortUtrustning().setVisible(true);
+                        break;
 
                     case "2. Alien":
-                    new AdminAlienVal().setVisible(true);
-                    break;
+                        dispose();
+                        new AdminAlienVal().setVisible(true);
+                        break;
 
                     //Nytt fönster för att hantera agenter/hämta information om agenter
                     case "3. Agent":
-                    new AdminAgentVal().setVisible(true);
-                    break;
+                        dispose();
+                        new AdminAgentVal().setVisible(true);
+                        break;
                     
                     //Inställningar
                     case "4. Inställningar":
+                        dispose();
                         new Installningar().setVisible(true);
+                        break;
                     //Ingen else sats behövs på grund av att användaren inte kan välja alternativ utanför listan.
                 }
             }
@@ -131,6 +136,7 @@ public class MenyValAdmin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         dispose();
+        new LoginJFrame().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

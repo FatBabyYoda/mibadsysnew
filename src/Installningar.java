@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 import oru.inf.InfException;
 /*
  *
@@ -112,7 +113,7 @@ public class Installningar extends javax.swing.JFrame {
         lbLosenTitel.setText("Lösenord:");
 
         jButton1.setForeground(new java.awt.Color(255, 51, 0));
-        jButton1.setText("X");
+        jButton1.setText("Tillbaka");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -183,10 +184,37 @@ public class Installningar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        new MenyValAgent().setVisible(true);
+        //Kör metoden checkAdmin() för att se vilken meny som ska öppnas härnäst
+        String adminStatus = checkAdmin();
+        if(adminStatus.equals("J"))
+        {
+            dispose();
+            new MenyValAdmin().setVisible(true);
+        }
+        
+        
+        else{
+            dispose();
+            new MenyValAgent().setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //KOD FÖR ATT SE OM ANVÄNDAREN ÄR EN ADMIN ELLER EJ
+    private String checkAdmin()
+    {
+        try
+        {
+           String hamtaStatus = Start.idb.fetchSingle("SELECT administrator from agent where Epost ='" + Start.epost + "'");
+           return hamtaStatus;
+        }
+        
+        catch(InfException e)
+        {
+            System.out.println(e);
+            return null;
+        }
+        
+    }
    
  
     

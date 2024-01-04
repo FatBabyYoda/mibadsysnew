@@ -24,26 +24,36 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbNyttTitel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSpara" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="pfNytt" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbNyttTitel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSpara" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="pfNytt" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnAvbryt" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbUpprepaTitel" min="-2" max="-2" attributes="0"/>
+                          <Component id="pfUpprepa" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="lbTitel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnAvbryt" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbUpprepaTitel" min="-2" max="-2" attributes="0"/>
-                  <Component id="pfUpprepa" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lbTitel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbNyttTitel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbUpprepaTitel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -66,12 +76,12 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lbNyttTitel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nytt l&#xf6;senord"/>
+        <Property name="text" type="java.lang.String" value="Nytt l&#xf6;senord:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbUpprepaTitel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Upprepa l&#xf6;senordet"/>
+        <Property name="text" type="java.lang.String" value="Upprepa l&#xf6;senordet:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pfNytt">
@@ -93,6 +103,14 @@
       <Events>
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAvbrytMousePressed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbTitel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#xc4;ndra l&#xf6;senord"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -62,7 +62,8 @@ public class TaBortUtrustning extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblTxt = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        btnVerkstall = new javax.swing.JButton();
+        btnTillbaka = new javax.swing.JButton();
+        btnVerkstall1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,11 +73,25 @@ public class TaBortUtrustning extends javax.swing.JFrame {
         lblTxt.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTxt.setText("Välj utrustning att ta bort:");
 
-        btnVerkstall.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnVerkstall.setText("Verkställ");
-        btnVerkstall.addActionListener(new java.awt.event.ActionListener() {
+        btnTillbaka.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnTillbaka.setForeground(new java.awt.Color(255, 0, 51));
+        btnTillbaka.setText("Tillbaka");
+        btnTillbaka.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnTillbakaMousePressed(evt);
+            }
+        });
+        btnTillbaka.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerkstallActionPerformed(evt);
+                btnTillbakaActionPerformed(evt);
+            }
+        });
+
+        btnVerkstall1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnVerkstall1.setText("Verkställ");
+        btnVerkstall1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerkstall1ActionPerformed(evt);
             }
         });
 
@@ -90,13 +105,18 @@ public class TaBortUtrustning extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(97, 97, 97)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnVerkstall, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTxt)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(lblTxt)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(113, 113, 113)
+                    .addComponent(btnVerkstall1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(464, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,15 +127,19 @@ public class TaBortUtrustning extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(btnVerkstall, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addComponent(btnTillbaka, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(289, Short.MAX_VALUE)
+                    .addComponent(btnVerkstall1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(167, 167, 167)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVerkstallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerkstallActionPerformed
+    private void btnTillbakaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTillbakaActionPerformed
         // TODO add your handling code here:
 
         try {
@@ -157,7 +181,16 @@ public class TaBortUtrustning extends javax.swing.JFrame {
             // För att skriva ut felet till konsolen (går att ta bort om du inte behöver det)
             JOptionPane.showMessageDialog(this, "Ett oväntat fel inträffade.", "Fel", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnVerkstallActionPerformed
+    }//GEN-LAST:event_btnTillbakaActionPerformed
+
+    private void btnVerkstall1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerkstall1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVerkstall1ActionPerformed
+
+    private void btnTillbakaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTillbakaMousePressed
+        dispose();
+        new MenyValAdmin().setVisible(true);
+    }//GEN-LAST:event_btnTillbakaMousePressed
 
     /**
      * @param args the command line arguments
@@ -195,7 +228,8 @@ public class TaBortUtrustning extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVerkstall;
+    private javax.swing.JButton btnTillbaka;
+    private javax.swing.JButton btnVerkstall1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblTxt;

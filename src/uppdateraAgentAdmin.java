@@ -122,7 +122,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebrokontoret", " " }));
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
-        btnAvbryt.setText("X");
+        btnAvbryt.setText("Tillbaka");
         btnAvbryt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAvbrytMousePressed(evt);
