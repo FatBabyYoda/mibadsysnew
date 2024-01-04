@@ -17,6 +17,7 @@ public class HittaAlienPlats extends javax.swing.JFrame {
      * Creates new form HittaAlienPlats
      */
     public HittaAlienPlats() {
+        //fyller comboboxen i fönstret
         initComponents();
         fyllHittaAlienCombobox();
     }

@@ -144,6 +144,7 @@ public class InformationAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_AlternativenActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // fyller "jTextArea" med all information om en specific alien
         infoLista.setText("");
         try {
             String valdAlien = Alternativen.getSelectedItem().toString();
