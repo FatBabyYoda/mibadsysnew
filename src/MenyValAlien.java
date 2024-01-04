@@ -129,11 +129,13 @@ public class MenyValAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbAgentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbAgentMousePressed
+        dispose();
         new AlienOmradesChef().setVisible(true);
     }//GEN-LAST:event_lbAgentMousePressed
 
     private void lbInstallningarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInstallningarMousePressed
         // Kod för när inställningar logo trycks ned
+        dispose();
         new InstallningarAlien().setVisible(true);
     }//GEN-LAST:event_lbInstallningarMousePressed
 
