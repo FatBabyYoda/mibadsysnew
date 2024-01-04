@@ -175,6 +175,7 @@ public class InstallningarAlien extends javax.swing.JFrame {
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
         new AndraLosenordAlien().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
