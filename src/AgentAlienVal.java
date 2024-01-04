@@ -97,13 +97,13 @@ public class AgentAlienVal extends javax.swing.JFrame {
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
         switch(cbAlternativ2.getSelectedItem().toString())
-        {
-            case "Nyegistrera":
+        { 
+            case "Nyregistrera":
             dispose();
             new NyregistreraAlien().setVisible(true);
             break;
 
-            case "Upddatera":
+            case "Uppdatera":
             dispose();
             new AndraAlienInfoAgent().setVisible(true);
             break;
@@ -133,8 +133,6 @@ public class AgentAlienVal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAvbryt;
     private javax.swing.JButton btnOK;
-    private javax.swing.JComboBox<String> cbAlternativ;
-    private javax.swing.JComboBox<String> cbAlternativ1;
     private javax.swing.JComboBox<String> cbAlternativ2;
     private javax.swing.JLabel lbTitel1;
     // End of variables declaration//GEN-END:variables
