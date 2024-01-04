@@ -180,6 +180,7 @@ public class Installningar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAndraLosenMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAndraLosenMousePressed
+        dispose();
         new AndraLosenord().setVisible(true);
     }//GEN-LAST:event_btnAndraLosenMousePressed
 
