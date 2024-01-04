@@ -108,6 +108,7 @@ public class MenyValAgent extends javax.swing.JFrame {
 
     //metod för att navigera sig i menyvalen, enter används för att välja alternativ. 
     private void lstAlternativKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lstAlternativKeyPressed
+        //Använder sig av enter för att välja vilket alternativ i listan, VK ENTER. Kommer vara detsamma för alla andra menyer
         if(evt.getKeyCode() == KeyEvent.VK_ENTER)
             
         //Härnäst önskar vi att se över vilket alternativ som valts av användaren.
