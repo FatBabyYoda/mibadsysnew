@@ -21,9 +21,6 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
-         //this.idb = idb;
-             //idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
-
         
     }
 
@@ -136,20 +133,21 @@ public class LoginJFrame extends javax.swing.JFrame {
     {
         try
         {
-            
+            // hämtar lösenordet från databasen om användasen finns
        String Losen = Start.idb.fetchSingle("select Losenord from "+ agentElAlienComboBox.getSelectedItem().toString() + " where Epost = '" + epostTextField.getText().toLowerCase() +"'");
-
+// om anvädaren inte finns vissas det med den här if satsen
             if(Losen == null)
             {
                 JOptionPane.showMessageDialog(null, "Användaren finns ej");
             
             }
+            //kollar om användaren skrivit in rätt lösenord
             else
             {
                 if (Losen.equals(new String(passwordField.getPassword())))
             {
                 JOptionPane.showMessageDialog(null, "Inloggad");
-                
+                // kollar om det är en admin vanlig agent eller alien som loggar in och öppnar rätt fönster.
                 switch(agentElAlienComboBox.getSelectedItem().toString())
                 {
                     case "Agent":
@@ -158,7 +156,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         {
                            Start.epost =  epostTextField.getText().toLowerCase();
                            new MenyValAdmin().setVisible(true);
-                        break;
+                        
                         }
                         else
                         {
@@ -194,6 +192,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     System.out.println(undatag);
                 }
     }
+    //kollar så att användaren skrivit in nåt på lösenordet och eposten när det skrivs nåt i eopsten för att kollar om loginknappen ska aktiveras
     private void epostTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_epostTextFieldKeyReleased
        if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".") && !(passwordField.getPassword().length == 0)) 
         {
@@ -204,7 +203,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             loginButton.setEnabled(false);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_epostTextFieldKeyReleased
-
+//kollar så att användaren skrivit in nåt på lösenordet och eposten när det skrivs nåt i lösenordet för att kollar om loginknappen ska aktiveras
     private void passwordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyReleased
         // TODO add your handling code here:
         if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".") && !(passwordField.getPassword().length == 0))

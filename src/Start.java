@@ -12,11 +12,12 @@ import oru.inf.InfException;
 
 
 public class Start {
+    //deklarerar variabler som kommer hänga med i hela användningen av programmet
     public static InfDB idb;
     public static String epost;
     public static void main(String args[])
   {
-    
+    //skapar uppkopplingen till databasen i variablen idb
     try 
         {
               idb = new InfDB("mibdb", "3306", "mibdba","mibkey");
@@ -27,8 +28,8 @@ public class Start {
                     System.out.println(undatag);
                 }
       
-                //new AndraInformationAgent().setVisible(true);
-                //new uppdateraAgentAdmin().setVisible(true); 
+                
+                //öppnar start fönstrer för programmet
                 new LoginJFrame().setVisible(true);
 
   }

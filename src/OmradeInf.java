@@ -23,7 +23,7 @@ public class OmradeInf extends javax.swing.JFrame {
         fyllHittaPlatsCombobox();
         fyllChefTop();
     }
-    
+    //hämtar alla områden och fyller comboboxen med dom
 private void fyllHittaPlatsCombobox() {
         try
         {
@@ -36,20 +36,25 @@ private void fyllHittaPlatsCombobox() {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
                 }  
             }
+ 
 private void fyllChefTop() {
       taTopList.setText("");
     try
         {
+            //tar ut valda området
               String valtOmrade = cbPlats.getSelectedItem().toString();
+              // hämtar chefen för det valda orådet från databasen
               String chef = Start.idb.fetchSingle("select Namn from agent join Omradeschef on Agent.Agent_ID = Omradeschef.Agent_ID join Omrade on Omrades_id = omradeschef.Omrade where Benamning = '"+valtOmrade+"'");
+              // hämtar top 3 listan för det valda området från databasen
               ArrayList<HashMap<String,String>>	AgentLista =  Start.idb.fetchRows("SELECT Agent.namn, COUNT(Alien.Ansvarig_Agent) AS Antal FROM Agent JOIN Alien ON Agent.Agent_ID = Alien.Ansvarig_Agent where Agent.Omrade = (select Omrades_ID from Omrade where benamning = '"+valtOmrade+"') GROUP BY Agent.namn ORDER BY Antal DESC LIMIT 3;");
+              //lägger in top3 i listan
               for (HashMap x:AgentLista) {
                   
                   taTopList.append(x.get("Namn")+" Antal:"+x.get("Antal")+"\n");
             
                 
             }
-              
+              //visar chefen för användaren
               labelValChef.setText(chef);
         
             }
@@ -165,7 +170,7 @@ private void fyllChefTop() {
     private void cbPlatsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbPlatsItemStateChanged
        fyllChefTop();
     }//GEN-LAST:event_cbPlatsItemStateChanged
-
+//tillbakaknapp
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
         new MenyValAgent().setVisible(true);

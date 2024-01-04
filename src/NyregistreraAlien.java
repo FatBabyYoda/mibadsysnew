@@ -24,7 +24,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         fyllHittaAgentCombobox();
         fyllHittaPlatsCombobox();
     }
-
+    //hämtar och fyller comboboxen med alla agenter
     private void fyllHittaAgentCombobox() {
         try
         {
@@ -37,6 +37,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
                 }  
             }
+    //hämtar och fyller comboboxen med alla platser
     private void fyllHittaPlatsCombobox() {
         try
         {
@@ -216,21 +217,23 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
         try {
             // TODO add your handling code here:
+            //skapar ett nytt id för den nya alien
             String nyttId = Start.idb.getAutoIncrement("alien","Alien_id");
-        
+        // tar fram dagens datum
         Date dagensDatum = new Date();
-         
+         //skapar fromat för datumet
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
+        //fromaterar datumet
         String datum = format.format(dagensDatum);
-        System.out.println(datum);
-        
+        //System.out.println(datum);
+        //kollar satt alla rutor har fyllts i
         if (tfEpost.getText().isEmpty() && tfNamn.getText().isEmpty() && tfTelefon.getText().isEmpty() && pfLosen.getPassword().equals(pfLosenUpp.getPassword()))
         {
             JOptionPane.showMessageDialog(null, "fyll i alla rutor");
         }
         else
         {
+            //sätter variabler till vädren som ska in i databasen och insertar dom till databasen
             String plats = Start.idb.fetchSingle("select Omrades_ID from omrade where Benamning = "+"'"+cbPlats.getSelectedItem().toString()+"'");
             String ansAgent = Start.idb.fetchSingle("select Agent_ID from Agent where Namn = "+"'"+cbAnsvAgnt.getSelectedItem().toString()+"'");
             String Epost = tfEpost.getText();

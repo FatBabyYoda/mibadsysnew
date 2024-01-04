@@ -24,6 +24,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     /**
      * Creates new form AndraAlienInfo
      */
+    //variable för att spara eposten för den alien som ska väljas
     String Epost;
     public AndraAlienInfo() {
         initComponents();
@@ -53,6 +54,12 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         btnAvbryt = new javax.swing.JButton();
         btnRadera = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,12 +101,32 @@ public class AndraAlienInfo extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setText("Ansvarig agent:");
+
+        jLabel3.setText("Område:");
+
+        jLabel4.setText("Lösenord:");
+
+        jLabel5.setText("Reg Datum:");
+
+        jLabel6.setText("Tel nummer:");
+
+        jLabel7.setText("Namn:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfRegDatum)
                     .addComponent(tfTel)
@@ -107,7 +134,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
                     .addComponent(tfLosen)
                     .addComponent(cbPlats, 0, 96, Short.MAX_VALUE)
                     .addComponent(cbAnsAgnt, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -129,12 +156,18 @@ public class AndraAlienInfo extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(14, Short.MAX_VALUE)
-                        .addComponent(cbAnsAgnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(20, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbAnsAgnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
-                        .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbPlats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
                         .addGap(21, 21, 21)
-                        .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tfLosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -146,16 +179,22 @@ public class AndraAlienInfo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(tfRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfRegDatum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
                         .addGap(22, 22, 22)
-                        .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfNamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -168,7 +207,8 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jList1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList1KeyPressed
-    if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+    // kollar så att knapp tryket som görs är ett enter
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
             
        
         {
@@ -177,6 +217,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_jList1KeyPressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //uppdaterar alla värden i databasen till de som står i rutorna.
         try {
             // TODO add your handling code here:
             Start.idb.update("Update alien set Namn = '"+tfNamn.getText()+"',Telefon= '"+tfTel.getText()+"',Losenord= '"+tfLosen.getText()+"',Registreringsdatum='"+tfRegDatum.getText()+"',Plats="+(cbPlats.getSelectedIndex()+1)+",Ansvarig_Agent="+(cbAnsAgnt.getSelectedIndex()+1)+" where epost = '"+Epost+"'");
@@ -187,6 +228,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
 
     private void tfEpostSokKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEpostSokKeyReleased
         // TODO add your handling code here:
+        //detta fyller listan med eposter som liknar det man skive så man kan söka och sedan välja ut den epost man vill använda för denna del av programmet
            try {
     ArrayList<String> Epostlista = Start.idb.fetchColumn("select epost from alien where epost like '%" + tfEpostSok.getText() + "%'");
     DefaultListModel<String> listModel = new DefaultListModel<>();   
@@ -217,6 +259,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnRaderaMousePressed
     private void getAlienInfo() {                                            
+        //hämtar värdena från databasen med hjälp utav den valda eposten och sätter in dom i textfeidl sätter även comboboxen till rätt värde
         try {
             // TODO add your handling code here:
             Epost = jList1.getSelectedValue();
@@ -232,7 +275,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
             System.out.println(ex);
         }
     }          
-    
+    //hämtar och fyller comboboxen med alla agenter
     private void fyllHittaAgentCombobox() {
         try
         {
@@ -245,6 +288,7 @@ public class AndraAlienInfo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
                 }  
             }
+    //hämtar och fyller comboboxen med alla platser
     private void fyllHittaPlatsCombobox() {
         try
         {
@@ -342,6 +386,12 @@ public class AndraAlienInfo extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbPlats;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField tfEpostSok;
