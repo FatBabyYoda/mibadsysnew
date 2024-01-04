@@ -117,7 +117,7 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
 
             //Uppdatera lösenordet utifrån vad som skrevs in i pfNytt
             try{
-                Start.idb.update("Update alient set Losenord= '" + losenordStr + "' where Epost ='" + Start.epost + "'");
+                Start.idb.update("Update alien set Losenord= '" + losenordStr + "' where Epost ='" + Start.epost + "'");
 
             }
             catch(InfException e){

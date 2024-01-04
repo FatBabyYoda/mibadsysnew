@@ -170,7 +170,7 @@ public class RegistreringsDatumAlien extends javax.swing.JFrame {
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
         dispose();
-        new MenyValAgent().setVisible(true);
+        new AgentAlienListor().setVisible(true);
     }//GEN-LAST:event_btnAvbrytMousePressed
 
     /**
