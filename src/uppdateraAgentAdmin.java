@@ -54,7 +54,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         KagentBox = new javax.swing.JComboBox<>();
         jComboBox4 = new javax.swing.JComboBox<>();
         btnAvbryt = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        omradechefUpdBtn = new javax.swing.JButton();
         kontorUppdateraBtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -119,7 +119,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
 
         jLabel10.setText("Kontor:");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebrokontoret", "kuken" }));
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Örebrokontoret", " " }));
 
         btnAvbryt.setForeground(new java.awt.Color(255, 0, 0));
         btnAvbryt.setText("X");
@@ -129,10 +129,10 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Uppdatera");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        omradechefUpdBtn.setText("Uppdatera");
+        omradechefUpdBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                omradechefUpdBtnActionPerformed(evt);
             }
         });
 
@@ -147,12 +147,6 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         jLabel11.setText("Admin:");
 
         jLabel12.setText("Agent:");
-
-        AagentBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AagentBoxActionPerformed(evt);
-            }
-        });
 
         adminUpdatteraBtn.setText("Uppdatera");
         adminUpdatteraBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +195,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel9)))
-                                            .addComponent(jButton2))
+                                            .addComponent(omradechefUpdBtn))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(KagentBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +246,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
                         .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(omradechefUpdBtn)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(kontorUppdateraBtn)
                         .addComponent(adminUpdatteraBtn)))
@@ -323,7 +317,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         String valdAdmin = AagentBox.getSelectedItem().toString();
         String sqlFraga = "UPDATE AGENT SET ADMINISTRATOR = 'J' WHERE NAMN ='" + valdAdmin + "'";
         Start.idb.update(sqlFraga);
-        JOptionPane.showMessageDialog(null, "Agenten är nu en Administator!");
+        JOptionPane.showMessageDialog(null, "Agenten är nu en Administratör!");
         }
         catch (InfException e) {
             JOptionPane.showMessageDialog(null, "Något gick fel!");
@@ -347,13 +341,22 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_kontorUppdateraBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void AagentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AagentBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AagentBoxActionPerformed
+    private void omradechefUpdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_omradechefUpdBtnActionPerformed
+        try{
+            String valdOmradeChef = OagentBox.getSelectedItem().toString();
+            String valdOmrade = OmradeBox.getSelectedItem().toString();
+            String agentidquery = "SELECT AGENT.AGENT_ID FROM AGENT WHERE NAMN ='" + valdOmradeChef + "'";
+            String agentid = Start.idb.fetchSingle(agentidquery);
+            String omradeidquery = "SELECT OMRADE.OMRADES_ID FROM OMRADE WHERE BENAMNING ='" + valdOmrade +"'";
+            String omradeid = Start.idb.fetchSingle(omradeidquery);
+            String sqlFraga = "UPDATE OMRADESCHEF SET OMRADESCHEF.AGENT_ID ='" + agentid + "' WHERE OMRADE ='" + omradeid + "'" ;
+            Start.idb.update(sqlFraga);
+            JOptionPane.showMessageDialog(null, "Område chef uppdaterad!");
+        }
+        catch (InfException e) {
+            JOptionPane.showMessageDialog(null, "Något gick fel!");
+        }
+    }//GEN-LAST:event_omradechefUpdBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,7 +402,6 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
     private javax.swing.JButton adminUpdatteraBtn;
     private javax.swing.JButton btnAvbryt;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -415,5 +417,6 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton kontorUppdateraBtn;
+    private javax.swing.JButton omradechefUpdBtn;
     // End of variables declaration//GEN-END:variables
 }

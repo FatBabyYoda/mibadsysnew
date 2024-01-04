@@ -225,6 +225,7 @@ public class InformationAgent extends javax.swing.JFrame {
               //SQL frågor där all information ska tas bort
               Start.idb.delete("Delete from innehar_utrustning where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from omradeschef where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
+              Start.idb.delete("Delete from faltagent where agent_id = (select agent_ID from agent where namn = '" + agentNamn + "')");
               Start.idb.delete("Delete from agent where namn = '" + agentNamn + "'");
               JOptionPane.showMessageDialog(null, "Agent borttagen!");
               

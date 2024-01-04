@@ -67,7 +67,7 @@
                                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="omradechefUpdBtn" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -135,7 +135,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="omradechefUpdBtn" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="kontorUppdateraBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="adminUpdatteraBtn" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -291,7 +291,7 @@
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="&#xd6;rebrokontoret"/>
-            <StringItem index="1" value="kuken"/>
+            <StringItem index="1" value=" "/>
           </StringArray>
         </Property>
       </Properties>
@@ -310,12 +310,12 @@
         <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAvbrytMousePressed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="omradechefUpdBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Uppdatera"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="omradechefUpdBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="kontorUppdateraBtn">
@@ -345,9 +345,6 @@
           <StringArray count="0"/>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AagentBoxActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
