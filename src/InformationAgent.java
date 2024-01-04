@@ -155,7 +155,8 @@ public class InformationAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_AlternativenActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                infoLista.setText("");
+        // fyller "jTextArean" med information om vald agent
+        infoLista.setText("");
         try {
             String valdAgent = Alternativen.getSelectedItem().toString();
             String agentNamn = Start.idb.fetchSingle("SELECT NAMN FROM AGENT WHERE NAMN ='" + valdAgent + "'");

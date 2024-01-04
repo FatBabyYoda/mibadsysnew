@@ -11,7 +11,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author Ägaren
+ * @author David
  */
 //Små ändringar i klassen och konstruktorn. Nytt fält som är vald agent, denna parameter ska tas emot från förgående Jframe
 public class uppdateraAgentAdmin extends javax.swing.JFrame {
@@ -21,6 +21,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
      * Creates new form uppdateraAgentAdmin
      */
     public uppdateraAgentAdmin() {
+        // fyller i alla comboboxar i fönstret med dem alternativen man vill komma åt
         initComponents();
         fyllOAgentCombobox();
         fyllOmradeComboBox();
@@ -358,6 +359,7 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
 
     private void adminUpdatteraBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUpdatteraBtnActionPerformed
         try{
+            //kommande fyra methods uppdaterar databasen till dem nya värderba administratören vill ändra
         String valdAdmin = AagentBox.getSelectedItem().toString();
         String sqlFraga = "UPDATE AGENT SET ADMINISTRATOR = 'J' WHERE NAMN ='" + valdAdmin + "'";
         Start.idb.update(sqlFraga);

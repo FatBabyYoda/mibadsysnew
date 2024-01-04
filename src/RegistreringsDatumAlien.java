@@ -151,6 +151,7 @@ public class RegistreringsDatumAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_TillTextActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //visar namn på aliens i "jtextArean" mellan två datum när knappen aktiveras
         infoLista.setText("");
         try {
             String franDatum = FranText.getText();

@@ -21,6 +21,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
      * Creates new form LaggTillAgent
      */
     public LaggTillAgent() {
+        // fyller i comboboxen med de alternativen ska kunna välja mellan
         initComponents();
         fyllIComboBoxOmrade();
         fyllifieldid();
@@ -256,18 +257,19 @@ public class LaggTillAgent extends javax.swing.JFrame {
 
     private void regBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regBtnActionPerformed
         try {
+            // en funktion för att datumet ska automatiskt registreras till dagens datum
             Date dagensDatum = new Date();
 
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
             String datum = format.format(dagensDatum);
             System.out.println(datum);
-
+            // om man kryssar i lådan "admin" så ska den ny registrerade agenten vara en admin
             String admin = "N";
             if (adminbox.isSelected()) {
                 admin = "J";
             }
-
+            // lokala variabler som kommer användas efter rad 285
             String omradeBOX = omradeCB.getSelectedItem().toString();
             String sqlfraga = "SELECT OMRADES_ID FROM OMRADE JOIN AGENT ON OMRADE.OMRADES_ID = AGENT.OMRADE WHERE OMRADE.BENAMNING ='" + omradeBOX + "'";
             String omrade = Start.idb.fetchSingle(sqlfraga);
