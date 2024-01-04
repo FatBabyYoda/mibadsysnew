@@ -130,6 +130,11 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         });
 
         jButton2.setText("Uppdatera");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         kontorUppdateraBtn.setText("Uppdatera");
         kontorUppdateraBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +147,12 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         jLabel11.setText("Admin:");
 
         jLabel12.setText("Agent:");
+
+        AagentBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AagentBoxActionPerformed(evt);
+            }
+        });
 
         adminUpdatteraBtn.setText("Uppdatera");
         adminUpdatteraBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -335,6 +346,14 @@ public class uppdateraAgentAdmin extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_kontorUppdateraBtnActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void AagentBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AagentBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AagentBoxActionPerformed
 
     /**
      * @param args the command line arguments

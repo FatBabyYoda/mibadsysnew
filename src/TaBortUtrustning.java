@@ -2,14 +2,11 @@
 import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import oru.inf.InfException;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.sql.SQLException;
-import java.sql.Connection;
+
+
 
 
 
