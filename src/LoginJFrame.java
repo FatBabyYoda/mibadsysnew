@@ -170,6 +170,10 @@ public class LoginJFrame extends javax.swing.JFrame {
                         }
                         else
                         {
+                            if (!Start.idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J"))
+                            {
+                                JOptionPane.showMessageDialog(null, "ej admin:-");
+                            }
                                System.out.println("not admin");
                                Start.epost =  epostTextField.getText().toLowerCase();
                                dispose();
