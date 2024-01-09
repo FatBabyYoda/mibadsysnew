@@ -232,7 +232,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         //System.out.println(datum);
        
         //kollar satt alla rutor har fyllts i
-        if (!Validring.emptyTextPassFields(pfLosen, tfEpost,tfNamn,tfTelefon) && Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
+        if (!Validring.tomTextPassFields(pfLosen, tfEpost,tfNamn,tfTelefon) && Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
         {
             
             //sätter variabler till vädren som ska in i databasen och insertar dom till databasen
