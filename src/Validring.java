@@ -127,7 +127,7 @@ public class Validring {
     {
             return !(tfNytt.getPassword().length == 0);   
     }
-    public static boolean emptyTextPassFields(javax.swing.JPasswordField pfLosen, JTextField... textFields) {
+    public static boolean tomTextPassFields(javax.swing.JPasswordField pfLosen, JTextField... textFields) {
         boolean check = false;
         if (!finnsTextUtanMess(pfLosen)) {
             check = true;
