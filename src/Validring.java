@@ -16,7 +16,7 @@ import oru.inf.InfException;
  * @author lucasandersson
  */
 public class Validring {
-    
+    // kollar om eposten redan finns i database
     public static Boolean finnsEpostenRedan(String Epost)
     {
         try {
@@ -41,6 +41,7 @@ public class Validring {
 
        return false;
     }
+    //kollar om lösenordet är för långt 
     public static Boolean rattLangd(javax.swing.JPasswordField pfNytt, int maxlangdd)
     {
         String losenordStr = new String(pfNytt.getPassword());
@@ -54,7 +55,7 @@ public class Validring {
             JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
             return false;
     }}
-    
+    //finns om man skulle behöva kolla om ett text field är för långt
     public static Boolean rattLangd(JTextField pfNytt, int maxlangdd)
     {
         String losenordStr = pfNytt.getText();
@@ -68,7 +69,7 @@ public class Validring {
 
        return false;
     }
-    
+    //kollar om ett textfeild är tomt
     public static Boolean finnsText(JTextField tfNytt)
     {
    
@@ -80,7 +81,7 @@ public class Validring {
         
        return true;
     }
-    
+    //kollar om ett passwordfeild är tomt
     public static Boolean finnsText(javax.swing.JPasswordField tfNytt)
     {
    
@@ -92,12 +93,12 @@ public class Validring {
        return true;
     }
     
-    
+    //datum validering
     private boolean valideringDatum(String date) {
         String legitimtDatum = "\\d{4}-\\d{2}-\\d{2}";
         return date.matches(legitimtDatum);
     }
-    
+    //kollar om en epost har @ och . i sig för lite simpel koll om den är en faktisk epost inte super bra validering men iallfall lite
     public static boolean epostCheck(JTextField epostTextField)
     {
    if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".")) 
@@ -107,7 +108,7 @@ public class Validring {
         return false;
     }
     
-    
+    //kan kolla flera text fields samtidigt i en metod
     public static boolean emptyTextFields(JTextField... textFields) {
         
         for (JTextField textField : textFields) {
@@ -123,10 +124,12 @@ public class Validring {
         return false;
 
     }
+    //samma som ovan koll efter tomt password field men lite simplare och ger inte ut en showmessage
     public static Boolean finnsTextUtanMess(javax.swing.JPasswordField tfNytt)
     {
             return !(tfNytt.getPassword().length == 0);   
     }
+    //kan kolla flera textfeild om dom är tomma och även en passwordfield
     public static boolean tomTextPassFields(javax.swing.JPasswordField pfLosen, JTextField... textFields) {
         boolean check = false;
         if (!finnsTextUtanMess(pfLosen)) {
