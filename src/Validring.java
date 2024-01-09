@@ -23,18 +23,20 @@ public class Validring {
              ArrayList<String> EpostAlien = Start.idb.fetchColumn("Select epost from alien");
              for (String x:EpostAlien) {
             if (Epost.toLowerCase().equals(x)) {
+               JOptionPane.showMessageDialog(null, "Eposten finns redan"); 
                 return true;
             }
         }
         for (String x: EpostAgnt) {
             if (Epost.toLowerCase().equals(x)) {
+                JOptionPane.showMessageDialog(null, "Eposten finns redan");
                 return true;
             }
         }
         } catch (InfException ex) {
             Logger.getLogger(Validring.class.getName()).log(Level.SEVERE, null, ex);
         }
-                JOptionPane.showMessageDialog(null, "Eposten finns redan");
+                
 
        return false;
     }
