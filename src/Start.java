@@ -30,7 +30,7 @@ public class Start {
       
                 
                 //öppnar start fönstrer för programmet
-                new NyregistreraAlien().setVisible(true);
+                new LoginJFrame().setVisible(true);
 
   }
 }

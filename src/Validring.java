@@ -47,10 +47,10 @@ public class Validring {
         if (losenordStr.length() <= maxLangd) {
             return true;
         }
-                JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
-
-       return false;
-    }
+        else{        
+            JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
+            return false;
+    }}
     
     public static Boolean rattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
     {

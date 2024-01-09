@@ -107,7 +107,10 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
-       andraLosenord();
+    if(Validring.finnsText(pfNytt))
+        {
+            andraLosenord();
+        }
     }//GEN-LAST:event_btnSparaMousePressed
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
@@ -116,14 +119,13 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAvbrytMousePressed
     
     private void andraLosenord()
-    {
+    {   
+        //Sparar lösenordet i en Sträng
          String losenordStr = new String(pfNytt.getPassword());
 
-        //Databasen tillåter endast ett lösenord med 6 tecken
-        int maxLangd = 6;
 
         //Härnäst jämför vi vad som skrivits in i lösenordfältet, samt säkerställer att det är inom den tillåtna längden
-        if (Arrays.equals(pfNytt.getPassword(), pfUpprepa.getPassword()) && losenordStr.length() <= maxLangd){
+        if (Arrays.equals(pfNytt.getPassword(), pfUpprepa.getPassword()) && Validring.rattLangd(pfNytt, 6)){
 
             //Uppdatera lösenordet utifrån vad som skrevs in i pfNytt
             try{
@@ -141,11 +143,7 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
         //Felmeddelande om lösnorden inte är korrekta
         else{
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
-
-            //Felmeddelande om lösenordet är för långt
-            if(losenordStr.length() > maxLangd){
-                JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
-            }}
+            }
     }
     
     /**
