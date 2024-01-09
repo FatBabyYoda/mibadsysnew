@@ -1,6 +1,7 @@
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import oru.inf.InfException;
@@ -215,8 +216,8 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
-        if (Validring.finnsEpostenRedan(tfEpost.getText())) {
-            
+        if (!Validring.finnsEpostenRedan(tfEpost.getText())) {
+          
         
         try {
             // TODO add your handling code here:
@@ -229,8 +230,9 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         //fromaterar datumet
         String datum = format.format(dagensDatum);
         //System.out.println(datum);
+       
         //kollar satt alla rutor har fyllts i
-        if (Validring.finnsText(tfNamn) && Validring.finnsText(tfEpost) && Validring.finnsText(tfNamn)&& Validring.finnsText(tfTelefon) && pfLosen.getPassword().equals(pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
+        if (Validring.finnsText(tfNamn) && Validring.finnsText(tfEpost) && Validring.finnsText(tfNamn)&& Validring.finnsText(tfTelefon) && Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
         {
             
             //sätter variabler till vädren som ska in i databasen och insertar dom till databasen
@@ -248,10 +250,12 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     "'"+Telefon+"',"+
                     plats+","+
                     ansAgent+")");
+                        JOptionPane.showMessageDialog(null, "Alien tillagd");
+
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "fyll i alla rutor");
+            JOptionPane.showMessageDialog(null, "fyll i alla rutor eller så är nåt för långt");
         }
         }
         catch (InfException e)
