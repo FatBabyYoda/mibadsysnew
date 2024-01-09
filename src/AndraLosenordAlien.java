@@ -107,7 +107,10 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
-       andraLosenord();
+    if(Validring.finnsText(pfNytt))
+        {
+            andraLosenord();
+        }
     }//GEN-LAST:event_btnSparaMousePressed
 
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
