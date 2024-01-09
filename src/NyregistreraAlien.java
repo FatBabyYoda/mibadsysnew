@@ -230,12 +230,9 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         String datum = format.format(dagensDatum);
         //System.out.println(datum);
         //kollar satt alla rutor har fyllts i
-        if (tfEpost.getText().isEmpty() && tfNamn.getText().isEmpty() && tfTelefon.getText().isEmpty() && pfLosen.getPassword().equals(pfLosenUpp.getPassword()))
+        if (Validring.finnsText(tfNamn) && Validring.finnsText(tfEpost) && Validring.finnsText(tfNamn)&& Validring.finnsText(tfTelefon) && pfLosen.getPassword().equals(pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
         {
-            JOptionPane.showMessageDialog(null, "fyll i alla rutor");
-        }
-        else
-        {
+            
             //sätter variabler till vädren som ska in i databasen och insertar dom till databasen
             String plats = Start.idb.fetchSingle("select Omrades_ID from omrade where Benamning = "+"'"+cbPlats.getSelectedItem().toString()+"'");
             String ansAgent = Start.idb.fetchSingle("select Agent_ID from Agent where Namn = "+"'"+cbAnsvAgnt.getSelectedItem().toString()+"'");
@@ -251,6 +248,10 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     "'"+Telefon+"',"+
                     plats+","+
                     ansAgent+")");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "fyll i alla rutor");
         }
         }
         catch (InfException e)
