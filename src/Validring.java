@@ -38,7 +38,7 @@ public class Validring {
 
        return false;
     }
-    public static Boolean losenRattLangd(javax.swing.JPasswordField pfNytt, int maxlangdd)
+    public static Boolean rattLangd(javax.swing.JPasswordField pfNytt, int maxlangdd)
     {
         String losenordStr = new String(pfNytt.getPassword());
 
@@ -52,7 +52,7 @@ public class Validring {
        return false;
     }
     
-    public static Boolean losenRattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
+    public static Boolean rattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
     {
         String losenordStr = pfNytt.getText();
 
