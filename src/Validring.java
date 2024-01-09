@@ -82,9 +82,10 @@ public class Validring {
     {
    
         if (tfNytt.getPassword().length == 0) {
+                JOptionPane.showMessageDialog(null, "Fyll i alla rutor");
             return false;
         }
-        JOptionPane.showMessageDialog(null, "Fyll i alla rutor");
+      
        return true;
     }
     
