@@ -38,16 +38,30 @@ public class Validring {
 
        return false;
     }
-    public static Boolean losenRattLangd(javax.swing.JPasswordField pfNytt)
+    public static Boolean losenRattLangd(javax.swing.JPasswordField pfNytt, int maxlangdd)
     {
         String losenordStr = new String(pfNytt.getPassword());
 
         //Databasen tillåter endast ett lösenord med 6 tecken
-        int maxLangd = 6;
+        int maxLangd = maxlangdd;
         if (losenordStr.length() <= maxLangd) {
             return true;
         }
                 JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
+
+       return false;
+    }
+    
+    public static Boolean losenRattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
+    {
+        String losenordStr = pfNytt.getText();
+
+        
+        int maxLangd = maxlangdd;
+        if (losenordStr.length() <= maxLangd) {
+            return true;
+        }
+                JOptionPane.showMessageDialog(null, "nåt fält är för långt");
 
        return false;
     }
