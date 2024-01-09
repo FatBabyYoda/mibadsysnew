@@ -107,7 +107,17 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
-        String losenordStr = new String(pfNytt.getPassword());
+       andraLosenord();
+    }//GEN-LAST:event_btnSparaMousePressed
+
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+        new InstallningarAlien().setVisible(true);
+    }//GEN-LAST:event_btnAvbrytMousePressed
+    
+    private void andraLosenord()
+    {
+         String losenordStr = new String(pfNytt.getPassword());
 
         //Databasen tillåter endast ett lösenord med 6 tecken
         int maxLangd = 6;
@@ -136,13 +146,8 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
             if(losenordStr.length() > maxLangd){
                 JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
             }}
-    }//GEN-LAST:event_btnSparaMousePressed
-
-    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
-        dispose();
-        new InstallningarAlien().setVisible(true);
-    }//GEN-LAST:event_btnAvbrytMousePressed
-
+    }
+    
     /**
      * @param args the command line arguments
      */

@@ -105,8 +105,19 @@ public class AndraLosenord extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Nya lösenordet som skrivs görs om till en sträng och lagras i variabeln losenordStr
+    
     private void btnSparaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSparaMousePressed
+        andraLosenord();
+    }//GEN-LAST:event_btnSparaMousePressed
+    //Stänger fönstret och öppnar åter upp inställningsvyn
+    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
+        dispose();
+        new Installningar().setVisible(true);
+     
+    }//GEN-LAST:event_btnAvbrytMousePressed
+    
+    private void andraLosenord()
+    {
         String losenordStr = new String(pfNytt.getPassword());
 
         //Databasen tillåter endast ett lösenord med 6 tecken
@@ -135,15 +146,8 @@ public class AndraLosenord extends javax.swing.JFrame {
         //Felmeddelande om lösenordet är för långt
             if(losenordStr.length() > maxLangd){
                 JOptionPane.showMessageDialog(null, "Ditt lösenord får inte vara längre än 6 tecken!");
-        }} 
-    }//GEN-LAST:event_btnSparaMousePressed
-    //Stänger fönstret och öppnar åter upp inställningsvyn
-    private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
-        dispose();
-        new Installningar().setVisible(true);
-     
-    }//GEN-LAST:event_btnAvbrytMousePressed
-    
+        }}
+    }
     /**
      * @param args the command line arguments
      */
