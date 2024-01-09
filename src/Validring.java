@@ -138,14 +138,11 @@ public class Validring {
               check = true;
               break;
         }
-               if (check = true ) {
+              
+        }
+      if (check == true ) {
                 JOptionPane.showMessageDialog(null, "fyll i alla rutor");
             }
- 
-
-       
-        }
-     
         return check;
 
     }

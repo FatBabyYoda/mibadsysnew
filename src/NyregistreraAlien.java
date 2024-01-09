@@ -216,7 +216,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
-        if (!Validring.finnsEpostenRedan(tfEpost.getText())) {
+        if (!Validring.finnsEpostenRedan(tfEpost.getText())&& Validring.finnsText(tfEpost)) {
           
         
         try {
