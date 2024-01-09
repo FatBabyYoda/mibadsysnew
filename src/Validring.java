@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import oru.inf.InfException;
 
 /*
@@ -54,7 +55,7 @@ public class Validring {
             return false;
     }}
     
-    public static Boolean rattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
+    public static Boolean rattLangd(JTextField pfNytt, int maxlangdd)
     {
         String losenordStr = pfNytt.getText();
 
@@ -63,12 +64,12 @@ public class Validring {
         if (losenordStr.length() <= maxLangd) {
             return true;
         }
-                JOptionPane.showMessageDialog(null, "nåt fält är för långt");
+                JOptionPane.showMessageDialog(null, "Lösenordet är för långt");
 
        return false;
     }
     
-    public static Boolean finnsText(javax.swing.JTextField tfNytt)
+    public static Boolean finnsText(JTextField tfNytt)
     {
    
         if (tfNytt.getText().isEmpty()) {
@@ -96,7 +97,8 @@ public class Validring {
         String legitimtDatum = "\\d{4}-\\d{2}-\\d{2}";
         return date.matches(legitimtDatum);
     }
-    public static Boolean epostCheck(javax.swing.JTextField epostTextField)
+    
+    public static boolean epostCheck(JTextField epostTextField)
     {
    if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".")) 
         {
@@ -104,5 +106,19 @@ public class Validring {
         }
         return false;
     }
-    
+    //test method skapad för enklare använding men skapad efter mesta klart så kommer nog inte användas
+    public static boolean emptyTextFields(JTextField... textFields) {
+        for (JTextField textField : textFields) {
+            if (textField.getText().isEmpty()) {
+               JOptionPane.showMessageDialog(null, "fyll i alla rutor");
+              return true;
+        }
+                
+
+       
+        }
+     
+        return false;
+
+    }
 }
