@@ -261,7 +261,6 @@ public class LaggTillAgent extends javax.swing.JFrame {
             Date dagensDatum = new Date();
 
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
             String datum = format.format(dagensDatum);
             System.out.println(datum);
             // om man kryssar i lådan "admin" så ska den ny registrerade agenten vara en admin
@@ -281,7 +280,7 @@ public class LaggTillAgent extends javax.swing.JFrame {
             String uprord = uprField.getText();
             String insertQuery = "INSERT INTO AGENT (AGENT_ID, NAMN, TELEFON, ANSTALLNINGSDATUM, ADMINISTRATOR, EPOST, LOSENORD, OMRADE) VALUES ('" + id + "', '" + namn + "', '" + telefon + "', '" + datum + "', '" + admin + "', '" + epost + "', '" + losenord + "', '" + omrade + "')";
 
-            if (losenord.equals(uprord)) {
+            if (losenord.equals(uprord) && Validring.finnsText(namnField) && Validring.finnsText(teleField) && Validring.finnsEpostenRedan(epost) && Validring.losenRattLangd(losenField, ALLBITS)) {
                 Start.idb.insert(insertQuery);
                 JOptionPane.showMessageDialog(null, "En ny agent är registrerad!");
                 // Kunna uppdatera id fältet så den även uppdateras
