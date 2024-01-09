@@ -55,6 +55,18 @@ public class Validring {
             JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
             return false;
     }}
+    public static Boolean rattLangdUtanMess(javax.swing.JPasswordField pfNytt, int maxlangdd)
+    {
+        String losenordStr = new String(pfNytt.getPassword());
+
+        //Databasen tillåter endast ett lösenord med 6 tecken
+        int maxLangd = maxlangdd;
+        if (losenordStr.length() <= maxLangd) {
+            return true;
+        }
+        else{        
+            return false;
+    }}
     //finns om man skulle behöva kolla om ett text field är för långt
     public static Boolean rattLangd(JTextField pfNytt, int maxlangdd)
     {
