@@ -22,12 +22,12 @@ public class Validring {
             ArrayList<String> EpostAgnt = Start.idb.fetchColumn("Select epost from agent");
              ArrayList<String> EpostAlien = Start.idb.fetchColumn("Select epost from alien");
              for (String x:EpostAlien) {
-            if (Epost.equals(x)) {
+            if (Epost.toLowerCase().equals(x)) {
                 return true;
             }
         }
         for (String x: EpostAgnt) {
-            if (Epost.equals(x)) {
+            if (Epost.toLowerCase().equals(x)) {
                 return true;
             }
         }
@@ -47,10 +47,10 @@ public class Validring {
         if (losenordStr.length() <= maxLangd) {
             return true;
         }
-                JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
-
-       return false;
-    }
+        else{        
+            JOptionPane.showMessageDialog(null, "Lösenord är för långt max 6 symboler");
+            return false;
+    }}
     
     public static Boolean rattLangd(javax.swing.JTextField pfNytt, int maxlangdd)
     {
@@ -70,20 +70,22 @@ public class Validring {
     {
    
         if (tfNytt.getText().isEmpty()) {
-            return true;
+            JOptionPane.showMessageDialog(null, "Fyll i alla rutor");
+            return false;
+            
         }
-        JOptionPane.showMessageDialog(null, "Fyll i alla rutor");
-       return false;
+        
+       return true;
     }
     
     public static Boolean finnsText(javax.swing.JPasswordField tfNytt)
     {
    
         if (tfNytt.getPassword().length == 0) {
-            return true;
+            return false;
         }
         JOptionPane.showMessageDialog(null, "Fyll i alla rutor");
-       return false;
+       return true;
     }
     
     
