@@ -215,6 +215,9 @@ public class NyregistreraAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegActionPerformed
+        if (Validring.finnsEpostenRedan(tfEpost.getText())) {
+            
+        
         try {
             // TODO add your handling code here:
             //skapar ett nytt id för den nya alien
@@ -254,6 +257,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                     {
                         System.out.println(e);
                     }
+        }
         
     }//GEN-LAST:event_btnRegActionPerformed
 
@@ -271,6 +275,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
             dispose();
             new AgentAlienVal().setVisible(true);
         }
+        
     }//GEN-LAST:event_btnAvbrytMousePressed
     //KOD FÖR ATT SE OM ANVÄNDAREN ÄR EN ADMIN ELLER EJ
     private String checkAdmin()
