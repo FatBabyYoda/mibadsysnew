@@ -106,8 +106,10 @@ public class Validring {
         }
         return false;
     }
-    //test method skapad för enklare använding men skapad efter mesta klart så kommer nog inte användas
+    
+    
     public static boolean emptyTextFields(JTextField... textFields) {
+        
         for (JTextField textField : textFields) {
             if (textField.getText().isEmpty()) {
                JOptionPane.showMessageDialog(null, "fyll i alla rutor");
@@ -119,6 +121,32 @@ public class Validring {
         }
      
         return false;
+
+    }
+    public static Boolean finnsTextUtanMess(javax.swing.JPasswordField tfNytt)
+    {
+            return !(tfNytt.getPassword().length == 0);   
+    }
+    public static boolean emptyTextPassFields(javax.swing.JPasswordField pfLosen, JTextField... textFields) {
+        boolean check = false;
+        if (!finnsTextUtanMess(pfLosen)) {
+            check = true;
+        }
+        for (JTextField textField : textFields) {
+            if (textField.getText().isEmpty()) {
+              
+              check = true;
+              break;
+        }
+               if (check = true ) {
+                JOptionPane.showMessageDialog(null, "fyll i alla rutor");
+            }
+ 
+
+       
+        }
+     
+        return check;
 
     }
 }

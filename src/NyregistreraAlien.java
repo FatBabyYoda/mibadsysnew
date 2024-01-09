@@ -232,7 +232,7 @@ public class NyregistreraAlien extends javax.swing.JFrame {
         //System.out.println(datum);
        
         //kollar satt alla rutor har fyllts i
-        if (!Validring.emptyTextFields(tfEpost,tfNamn,tfTelefon) && Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6) && Validring.finnsText(pfLosen))
+        if (!Validring.emptyTextPassFields(pfLosen, tfEpost,tfNamn,tfTelefon) && Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()) && Validring.rattLangd(pfLosen, 6))
         {
             
             //sätter variabler till vädren som ska in i databasen och insertar dom till databasen
@@ -253,9 +253,9 @@ public class NyregistreraAlien extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Alien tillagd");
 
         }
-       else
+        else if(!Arrays.equals(pfLosen.getPassword() ,pfLosenUpp.getPassword()))
         {
-        JOptionPane.showMessageDialog(null, "Om ingen annat felmeddelande matchar ej lösenorden");
+        JOptionPane.showMessageDialog(null, "Lösenorden matchar ej");
 
         }
         }
