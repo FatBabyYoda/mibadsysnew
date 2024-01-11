@@ -170,7 +170,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         }
                         else
                         {
-                            if (!Start.idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J"))
+                            if (!Start.idb.fetchSingle("select Administrator from Agent where Epost = '" + epostTextField.getText().toLowerCase() +"'").equals("J")&& cbAdmin.getState()==true)
                             {
                                 JOptionPane.showMessageDialog(null, "ej admin:-");
                             }
@@ -210,11 +210,11 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
     //kollar så att användaren skrivit in nåt på lösenordet och eposten när det skrivs nåt i eopsten för att kollar om loginknappen ska aktiveras
     private void epostTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_epostTextFieldKeyReleased
-       if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".") && !(passwordField.getPassword().length == 0)) 
+       if (Validring.epostCheck(epostTextField) && !Validring.rattLangdUtanMess(passwordField, 0)) 
         {
             loginButton.setEnabled(true);
         }
-        if (!epostTextField.getText().contains("@") || !epostTextField.getText().contains(".") || passwordField.getPassword().length == 0) 
+        if (!Validring.epostCheck(epostTextField) || Validring.rattLangdUtanMess(passwordField, 0)) 
         {
             loginButton.setEnabled(false);
         }        // TODO add your handling code here:
@@ -222,11 +222,11 @@ public class LoginJFrame extends javax.swing.JFrame {
 //kollar så att användaren skrivit in nåt på lösenordet och eposten när det skrivs nåt i lösenordet för att kollar om loginknappen ska aktiveras
     private void passwordFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_passwordFieldKeyReleased
         // TODO add your handling code here:
-        if (epostTextField.getText().contains("@") && epostTextField.getText().contains(".") && !(passwordField.getPassword().length == 0))
+        if (Validring.epostCheck(epostTextField) && !Validring.rattLangdUtanMess(passwordField, 0))
         {
             loginButton.setEnabled(true);
         }
-        if (!epostTextField.getText().contains("@") || !epostTextField.getText().contains(".") || passwordField.getPassword().length == 0) 
+        if (!Validring.epostCheck(epostTextField) || Validring.rattLangdUtanMess(passwordField, 0)) 
         {
             loginButton.setEnabled(false);
         }    

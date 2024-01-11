@@ -111,6 +111,7 @@ public class AndraLosenord extends javax.swing.JFrame {
         {
             andraLosenord();
         }
+     
     }//GEN-LAST:event_btnSparaMousePressed
     //Stänger fönstret och öppnar åter upp inställningsvyn
     private void btnAvbrytMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAvbrytMousePressed
@@ -142,7 +143,8 @@ public class AndraLosenord extends javax.swing.JFrame {
             }
         
         //Felmeddelande om lösnorden inte är korrekta
-        else{
+        else if(!Arrays.equals(pfNytt.getPassword() ,pfUpprepa.getPassword()))
+            {
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
             }
     }

@@ -226,13 +226,14 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         //uppdaterar alla värden i databasen till de som står i rutorna.
         try {
             // TODO add your handling code here:
-            if (rootPaneCheckingEnabled) {
+            if (Validring.rattLangd(tfLosen, 6)) {
             Start.idb.update("Update alien set Namn = '"+tfNamn.getText()+"',Telefon= '"+tfTel.getText()+"',Losenord= '"+tfLosen.getText()+"',Registreringsdatum='"+tfRegDatum.getText()+"',Plats="+(cbPlats.getSelectedIndex()+1)+",Ansvarig_Agent="+(cbAnsAgnt.getSelectedIndex()+1)+" where epost = '"+Epost+"'");
 
             }
             else
             {
-                
+                            JOptionPane.showMessageDialog(null, "Lösenord är för långt");
+
             }
         } catch (InfException ex) {
            System.out.println(ex);
