@@ -78,6 +78,12 @@ public class AndraAlienInfo extends javax.swing.JFrame {
 
         jLabel1.setText("Epost");
 
+        cbAnsAgnt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbAnsAgntActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Spara");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,6 +271,10 @@ public class AndraAlienInfo extends javax.swing.JFrame {
         //Ingen else sats behövs eftersom att fönstret endast ska stängas ned
 
     }//GEN-LAST:event_btnRaderaMousePressed
+
+    private void cbAnsAgntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAnsAgntActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbAnsAgntActionPerformed
     private void getAlienInfo() {                                            
         //hämtar värdena från databasen med hjälp utav den valda eposten och sätter in dom i textfeidl sätter även comboboxen till rätt värde
         try {

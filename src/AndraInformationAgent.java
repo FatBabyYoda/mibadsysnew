@@ -149,6 +149,11 @@ public class AndraInformationAgent extends javax.swing.JFrame {
 
         txtNyttId.setEditable(false);
         txtNyttId.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNyttId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNyttIdActionPerformed(evt);
+            }
+        });
 
         txtNyttNamn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -318,6 +323,9 @@ public class AndraInformationAgent extends javax.swing.JFrame {
     private void btnUpdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdActionPerformed
         // TODO add your handling code here:
         
+        if (Validring.finnsText(txtNyttNamn) && Validring.finnsText(txtNyttTelefon) && Validring.finnsText(txtNyttEpost) && Validring.finnsText(txtNyttAnst)) {
+            
+               
         try {
 
             String nyTelefon = txtNyttTelefon.getText();
@@ -357,8 +365,11 @@ public class AndraInformationAgent extends javax.swing.JFrame {
 
         } catch (InfException e) {
 
-            JOptionPane.showMessageDialog(this, "Fel vid uppdatering. Försök igen.\n" + e.getMessage());
-        }     
+                JOptionPane.showMessageDialog(this, "Fel vid uppdatering. Försök igen.\n" + e.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vänligen fyll i alla rutor");
+        }
     }//GEN-LAST:event_btnUpdActionPerformed
 
         private boolean valideringDatum(String date) {
@@ -428,6 +439,10 @@ private JFrame frame;
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void txtNyttIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNyttIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNyttIdActionPerformed
 
     /**
      * @param args the command line arguments
