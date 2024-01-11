@@ -141,7 +141,8 @@ public class AndraLosenordAlien extends javax.swing.JFrame {
         }
 
         //Felmeddelande om lösnorden inte är korrekta
-        else{
+        else if(!Arrays.equals(pfNytt.getPassword() ,pfUpprepa.getPassword()))
+            {
             JOptionPane.showMessageDialog(null, "Lösenorden stämmer inte överens!");
             }
     }
