@@ -15,6 +15,7 @@ public class Start {
     //deklarerar variabler som kommer hänga med i hela användningen av programmet
     public static InfDB idb;
     public static String epost;
+    public static boolean admincheck;
     public static void main(String args[])
   {
     //skapar uppkopplingen till databasen i variablen idb

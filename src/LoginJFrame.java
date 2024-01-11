@@ -165,6 +165,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                         {
                            Start.epost =  epostTextField.getText().toLowerCase();
                            dispose();
+                           Start.admincheck = true;
                            new MenyValAdmin().setVisible(true);
                         
                         }
