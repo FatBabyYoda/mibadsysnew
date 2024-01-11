@@ -176,6 +176,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                                 JOptionPane.showMessageDialog(null, "ej admin:-");
                             }
                                System.out.println("not admin");
+                               Start.admincheck = false;
                                Start.epost =  epostTextField.getText().toLowerCase();
                                dispose();
                                new MenyValAgent().setVisible(true);

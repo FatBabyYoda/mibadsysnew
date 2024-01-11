@@ -186,8 +186,7 @@ public class Installningar extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Kör metoden checkAdmin() för att se vilken meny som ska öppnas härnäst
-        String adminStatus = checkAdmin();
-        if(adminStatus.equals("J"))
+        if(Start.admincheck)
         {
             dispose();
             new MenyValAdmin().setVisible(true);
@@ -200,22 +199,6 @@ public class Installningar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    //KOD FÖR ATT SE OM ANVÄNDAREN ÄR EN ADMIN ELLER EJ
-    private String checkAdmin()
-    {
-        try
-        {
-           String hamtaStatus = Start.idb.fetchSingle("SELECT administrator from agent where Epost ='" + Start.epost + "'");
-           return hamtaStatus;
-        }
-        
-        catch(InfException e)
-        {
-            System.out.println(e);
-            return null;
-        }
-        
-    }
    
  
     
